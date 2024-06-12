@@ -1,5 +1,5 @@
-#ifndef FIELD_C
-#define FIELD_C
+#ifndef BYTES_C
+#define BYTES_C
 
 #include <class_loader/bytes.h>
 
