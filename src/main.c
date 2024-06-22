@@ -5,8 +5,8 @@
 
 #include <class_loader/class_file.h>
 #include <leitor_exibidor/leitor_exibidor.h>
+#include "jvm.c"
 
-#define PATH_FILE "./Test.class"
 
 int main(int argc, char const *argv[])
 {
@@ -42,7 +42,7 @@ int main(int argc, char const *argv[])
                 showClass(cf);
                 break;
             case '2':
-                //Code
+                jvm(cf);
                 break;
             case '3':
                 goto sair;

@@ -297,8 +297,8 @@ void print_bytecode(u1* code, u4 code_length) {
             case (u1) 0x0d: printf("fconst_2\n"); break;
             case (u1) 0x0e: printf("dconst_0\n"); break;
             case (u1) 0x0f: printf("dconst_1\n"); break;
-            case (u1) 0x10: printf("bipush %d\n", code[i+1]); i++; break;
-            case (u1) 0x11: printf("sipush %d\n", code[i+1]<<8 | code[i+2]); i+=2; break;
+            case (u1) 0x10: printf("bipush %d\n", (int8_t) code[i+1]); i++; break;
+            case (u1) 0x11: printf("sipush %d\n", (int16_t) (code[i+1]<<8 | code[i+2])); i+=2; break;
             case (u1) 0x12: printf("ldc %d\n", code[i+1]); i++;  break;
             case (u1) 0x13: printf("ldc_w %d\n", code[i+1]<<8 | code[i+2]); i+=2; break;
             case (u1) 0x14: printf("ldc2_w %d\n", code[i+1]<<8 | code[i+2]); i+=2; break;

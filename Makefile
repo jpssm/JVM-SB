@@ -1,6 +1,6 @@
 # Compilador e flags
 CC = gcc
-CFLAGS = -Iinclude -Wall -Wextra -std=c99
+CFLAGS = -c -Wall -Wextra -std=c99
 LDFLAGS = 
 
 # Diretórios
@@ -9,7 +9,7 @@ OBJ_DIR = obj
 INCLUDE_DIR = include
 
 # Arquivos fontes e objetos
-SRCS = $(wildcard $(SRC_DIR)/class_loader/*.c $(SRC_DIR)/execution_engine/*.c $(SRC_DIR)/leitor_exibidor/*.c $(SRC_DIR)/runtime_data/*.c $(SRC_DIR)/main.c)
+SRCS = $(wildcard $(SRC_DIR)/class_loader/*.c $(SRC_DIR)/execution_engine/*.c $(SRC_DIR)/leitor_exibidor/*.c $(SRC_DIR)/runtime_data/*.c $(SRC_DIR)/jvm.c $(SRC_DIR)/main.c)
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # Executável final
