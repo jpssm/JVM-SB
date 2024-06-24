@@ -28,7 +28,7 @@ typedef struct{
     Frame *top;
 } Frame_stack;
 
-void create_frame(method_info *method, Frame_stack frame_stack);
+Frame create_frame(method_info *method, Frame_stack *frame_stack);
 void remove_frame(method_info *method);
 
 #endif

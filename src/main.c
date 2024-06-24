@@ -5,7 +5,7 @@
 
 #include <class_loader/class_file.h>
 #include <leitor_exibidor/leitor_exibidor.h>
-#include "jvm.c"
+#include <execution_engine/jvm.h>
 
 
 int main(int argc, char const *argv[])
