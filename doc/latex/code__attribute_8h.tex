@@ -1,0 +1,54 @@
+\doxysection{include/class\+\_\+loader/code\+\_\+attribute.h File Reference}
+\hypertarget{code__attribute_8h}{}\label{code__attribute_8h}\index{include/class\_loader/code\_attribute.h@{include/class\_loader/code\_attribute.h}}
+
+
+Declarações de estruturas e funções para manipulação do atributo de código de classes Java.  
+
+
+{\ttfamily \#include $<$class\+\_\+loader/bytes.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/field.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/method.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/constant\+\_\+pool.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/class\+\_\+file.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcode__attribute__struct}{code\+\_\+attribute\+\_\+struct}}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar informações do atributo de código. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{code__attribute_8h_a20e0abfd2a0793289e825e9a82b667d5}\label{code__attribute_8h_a20e0abfd2a0793289e825e9a82b667d5} 
+typedef struct \mbox{\hyperlink{structcode__attribute__struct}{code\+\_\+attribute\+\_\+struct}} {\bfseries code\+\_\+attribute}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcode__attribute}{code\+\_\+attribute}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{code__attribute_8h_a5982c3f96b2466658c08c48eab6978b2}{create\+\_\+code\+\_\+attribute}} (FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Cria uma estrutura \doxylink{structcode__attribute}{code\+\_\+attribute} a partir de um arquivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declarações de estruturas e funções para manipulação do atributo de código de classes Java. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{code__attribute_8h_a5982c3f96b2466658c08c48eab6978b2}\index{code\_attribute.h@{code\_attribute.h}!create\_code\_attribute@{create\_code\_attribute}}
+\index{create\_code\_attribute@{create\_code\_attribute}!code\_attribute.h@{code\_attribute.h}}
+\doxysubsubsection{\texorpdfstring{create\_code\_attribute()}{create\_code\_attribute()}}
+{\footnotesize\ttfamily \label{code__attribute_8h_a5982c3f96b2466658c08c48eab6978b2} 
+\mbox{\hyperlink{structcode__attribute}{code\+\_\+attribute}} \texorpdfstring{$\ast$}{*} create\+\_\+code\+\_\+attribute (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Cria uma estrutura \doxylink{structcode__attribute}{code\+\_\+attribute} a partir de um arquivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Ponteiro para o arquivo que contém os dados do atributo de código. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para a estrutura \doxylink{structcode__attribute}{code\+\_\+attribute} criada. 
+\end{DoxyReturn}

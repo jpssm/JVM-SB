@@ -1,0 +1,75 @@
+\doxysection{include/runtime\+\_\+data/object.h File Reference}
+\hypertarget{object_8h}{}\label{object_8h}\index{include/runtime\_data/object.h@{include/runtime\_data/object.h}}
+
+
+Define estruturas e funções para manipulação de objetos e arrays na Máquina Virtual Java (JVM).  
+
+
+{\ttfamily \#include $<$class\+\_\+loader/class\+\_\+file.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/method.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/bytes.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_array}{Array}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um array na JVM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{object_8h_ac2198ff35934b3dd78e881464159ae26}\label{object_8h_ac2198ff35934b3dd78e881464159ae26} 
+\#define {\bfseries T\+\_\+\+BOOLEAN}~4
+\begin{DoxyCompactList}\small\item\em Macro que representa o tipo booleano em arrays na JVM. \end{DoxyCompactList}\item 
+\Hypertarget{object_8h_ae2381f297a8fbb736886d7d1b6b99b42}\label{object_8h_ae2381f297a8fbb736886d7d1b6b99b42} 
+\#define {\bfseries T\+\_\+\+CHAR}~5
+\begin{DoxyCompactList}\small\item\em Macro que representa o tipo char em arrays na JVM. \end{DoxyCompactList}\item 
+\Hypertarget{object_8h_a3d072e0c25cf678e9b8601b957b92eae}\label{object_8h_a3d072e0c25cf678e9b8601b957b92eae} 
+\#define {\bfseries T\+\_\+\+FLOAT}~6
+\begin{DoxyCompactList}\small\item\em Macro que representa o tipo float em arrays na JVM. \end{DoxyCompactList}\item 
+\Hypertarget{object_8h_a6e80924a839d0f80571bcd1d2b6ec084}\label{object_8h_a6e80924a839d0f80571bcd1d2b6ec084} 
+\#define {\bfseries T\+\_\+\+DOUBLE}~7
+\begin{DoxyCompactList}\small\item\em Macro que representa o tipo double em arrays na JVM. \end{DoxyCompactList}\item 
+\Hypertarget{object_8h_a6f64c98fe49fdcf1d2939db817918696}\label{object_8h_a6f64c98fe49fdcf1d2939db817918696} 
+\#define {\bfseries T\+\_\+\+BYTE}~8
+\begin{DoxyCompactList}\small\item\em Macro que representa o tipo byte em arrays na JVM. \end{DoxyCompactList}\item 
+\Hypertarget{object_8h_a23ab0d39813d2d5a59ccb7b9b68c3e6d}\label{object_8h_a23ab0d39813d2d5a59ccb7b9b68c3e6d} 
+\#define {\bfseries T\+\_\+\+SHORT}~9
+\begin{DoxyCompactList}\small\item\em Macro que representa o tipo short em arrays na JVM. \end{DoxyCompactList}\item 
+\Hypertarget{object_8h_a4fa28a492427bc4af75248e22537e9b4}\label{object_8h_a4fa28a492427bc4af75248e22537e9b4} 
+\#define {\bfseries T\+\_\+\+INT}~10
+\begin{DoxyCompactList}\small\item\em Macro que representa o tipo int em arrays na JVM. \end{DoxyCompactList}\item 
+\Hypertarget{object_8h_a2d9ac9f51c75bdb21cf9dfd1412fa194}\label{object_8h_a2d9ac9f51c75bdb21cf9dfd1412fa194} 
+\#define {\bfseries T\+\_\+\+LONG}~11
+\begin{DoxyCompactList}\small\item\em Macro que representa o tipo long em arrays na JVM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_array}{Array}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{object_8h_ae8a42e823dfcbde1ac1f8e1842e9e0da}{create\+\_\+array}} (\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} size, \mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} type)
+\begin{DoxyCompactList}\small\item\em Cria um novo array com o tamanho especificado e tipo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define estruturas e funções para manipulação de objetos e arrays na Máquina Virtual Java (JVM). 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{object_8h_ae8a42e823dfcbde1ac1f8e1842e9e0da}\index{object.h@{object.h}!create\_array@{create\_array}}
+\index{create\_array@{create\_array}!object.h@{object.h}}
+\doxysubsubsection{\texorpdfstring{create\_array()}{create\_array()}}
+{\footnotesize\ttfamily \label{object_8h_ae8a42e823dfcbde1ac1f8e1842e9e0da} 
+\mbox{\hyperlink{struct_array}{Array}} \texorpdfstring{$\ast$}{*} create\+\_\+array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}}]{size}{, }\item[{\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo array com o tamanho especificado e tipo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Tamanho do array. \\
+\hline
+{\em type} & Tipo do array conforme definido pelas macros T\+\_\+\texorpdfstring{$\ast$}{*}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\texorpdfstring{$\ast$}{*} Ponteiro para a estrutura \doxylink{struct_array}{Array} criada. 
+\end{DoxyReturn}

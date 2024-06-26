@@ -1,0 +1,46 @@
+\doxysection{bytes.\+c}
+\hypertarget{bytes_8c_source}{}\label{bytes_8c_source}\index{src/class\_loader/bytes.c@{src/class\_loader/bytes.c}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BYTES\_C}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BYTES\_C}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bytes_8h}{class\_loader/bytes.h}}>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{static}\ \mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}\ u1Read(FILE\ *fd)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}\ toReturn\ =\ getc(fd);\ \textcolor{comment}{//\ Lê\ o\ primeiro\ byte}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{return}\ toReturn;}
+\DoxyCodeLine{00017\ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{static}\ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ u2Read(FILE\ *fd)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ toReturn\ =\ getc(fd);}
+\DoxyCodeLine{00027\ \ \ \ \ toReturn\ =\ (toReturn\ <<\ 8)\ |\ (getc(fd));}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{return}\ toReturn;}
+\DoxyCodeLine{00029\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{static}\ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ u4Read(FILE\ *fd)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ toReturn\ =\ getc(fd);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lê\ o\ primeiro\ byte}}
+\DoxyCodeLine{00039\ \ \ \ \ toReturn\ =\ (toReturn\ <<\ 24)\ |\ (getc(fd)\ <<\ 16);\ \textcolor{comment}{//\ Desloca\ e\ lê\ o\ segundo\ byte}}
+\DoxyCodeLine{00040\ \ \ \ \ toReturn\ |=\ (getc(fd)\ <<\ 8);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lê\ o\ terceiro\ byte}}
+\DoxyCodeLine{00041\ \ \ \ \ toReturn\ |=\ getc(fd);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lê\ o\ quarto\ byte}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ toReturn;}
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{static}\ \mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}}\ u8Read(FILE\ *fd)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}}\ toReturn\ =\ getc(fd);\ \textcolor{comment}{//\ Lê\ o\ primeiro\ byte}}
+\DoxyCodeLine{00053\ \ \ \ \ toReturn\ =\ (toReturn\ <<\ 56)\ |\ ((\mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}})\ getc(fd)\ <<\ 48);\ \textcolor{comment}{//\ Desloca\ e\ lê\ o\ segundo\ byte}}
+\DoxyCodeLine{00054\ \ \ \ \ toReturn\ |=\ ((\mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}})\ getc(fd)\ <<\ 40);\ \textcolor{comment}{//\ Lê\ o\ terceiro\ byte}}
+\DoxyCodeLine{00055\ \ \ \ \ toReturn\ |=\ ((\mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}})\ getc(fd)\ <<\ 32);\ \textcolor{comment}{//\ Lê\ o\ quarto\ byte}}
+\DoxyCodeLine{00056\ \ \ \ \ toReturn\ |=\ ((\mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}})\ getc(fd)\ <<\ 24);\ \textcolor{comment}{//\ Lê\ o\ quinto\ byte}}
+\DoxyCodeLine{00057\ \ \ \ \ toReturn\ |=\ ((\mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}})\ getc(fd)\ <<\ 16);\ \textcolor{comment}{//\ Lê\ o\ sexto\ byte}}
+\DoxyCodeLine{00058\ \ \ \ \ toReturn\ |=\ ((\mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}})\ getc(fd)\ <<\ 8);\ \textcolor{comment}{//\ Lê\ o\ sétimo\ byte}}
+\DoxyCodeLine{00059\ \ \ \ \ toReturn\ |=\ getc(fd);\ \textcolor{comment}{//\ Lê\ o\ oitavo\ byte}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ toReturn;}
+\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,54 @@
+\doxysection{runtime\+\_\+data.\+h}
+\hypertarget{runtime__data_8h_source}{}\label{runtime__data_8h_source}\index{include/runtime\_data/runtime\_data.h@{include/runtime\_data/runtime\_data.h}}
+\mbox{\hyperlink{runtime__data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ RUNTIME\_DATA\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ RUNTIME\_DATA\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class__file_8h}{class\_loader/class\_file.h}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{method_8h}{class\_loader/method.h}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bytes_8h}{class\_loader/bytes.h}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{object_8h}{runtime\_data/object.h}}>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{structclass__file}{ClassFile}}\ *\mbox{\hyperlink{struct_method__area_a8f05c28f867a8c4c83bc765a90a2d9b7}{class\_list}};\ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{struct_method__area_a6d47853579d0458c923200c1eec18a6f}{size}};\ }
+\DoxyCodeLine{00020\ \}\ \mbox{\hyperlink{struct_method__area}{Method\_area}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{struct_array}{Array}}\ **\mbox{\hyperlink{struct_array__heap_a3d5b8ad07d9ee2ae990075c9f897a711}{arrays}};\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{struct_array__heap_ac8351a868fa21f699234899f0f381786}{count}};\ }
+\DoxyCodeLine{00028\ \}\ \mbox{\hyperlink{struct_array__heap}{Array\_heap}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_frame}{Frame}}\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{structcp__info__struct}{cp\_info}}\ *\mbox{\hyperlink{struct_frame_ada1bd832b6f72f87a35d88c68b9a188a}{cp}};\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{struct_frame_ada6a6cf76d00cbadf43a86a686dd026c}{pc}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ *\mbox{\hyperlink{struct_frame_a967c8ce20bdbd75748b3dc77e0031647}{operand\_stack}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ *\mbox{\hyperlink{struct_frame_a2edeb1231af2ad66ff13c0a456840fb8}{operand\_stack\_base}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ *\mbox{\hyperlink{struct_frame_a27b758f0f13db457e50e9e96fd2e1736}{locals}};\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{structmethod__info__struct}{method\_info}}\ *\mbox{\hyperlink{struct_frame_af0943cac72b53aa5aa67f3e7097430a1}{method}};\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{struct_frame_ab89cc17f0ec6475024093b021fb57f78}{method\_info\_index}};\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}\ *\mbox{\hyperlink{struct_frame_a74003e7455cbd2ae858a24fe576200a3}{code}};\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{struct_frame_ac02f1591630470f5041701298e120547}{code\_lenght}};\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_frame}{Frame}}\ *\mbox{\hyperlink{struct_frame_adb08c0fa81a0d902dad9b8691f2abff4}{next}};\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_frame}{Frame}}\ *\mbox{\hyperlink{struct_frame_a66b35fb4f1a1d3b66c5b36ffe574b3bb}{previous}};\ }
+\DoxyCodeLine{00045\ \}\ \mbox{\hyperlink{runtime__data_8h_a8bed1e36372ccc1470e37e91647cce20}{Frame}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{struct_frame}{Frame}}\ *\mbox{\hyperlink{struct_frame__stack_a6a53a41357f9d2db822399fcde0cb761}{base}};\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{struct_frame}{Frame}}\ *\mbox{\hyperlink{struct_frame__stack_a68372f497f3c86dc42c766cdf0031126}{top}};\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{struct_frame__stack_a83b91458a2ecd1f5b2b71069180c7461}{stack\_length}};\ }
+\DoxyCodeLine{00054\ \}\ \mbox{\hyperlink{struct_frame__stack}{Frame\_stack}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \mbox{\hyperlink{struct_frame}{Frame}}\ *\mbox{\hyperlink{runtime__data_8h_ab3d11b8f7b6f950110a4d2d7ba519ff9}{create\_frame}}(\mbox{\hyperlink{structmethod__info__struct}{method\_info}}\ *method,\ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ method\_info\_index);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{runtime__data_8h_a171ac7a2cf3f3513bef1885f3594a9fe}{store\_array}}(\mbox{\hyperlink{struct_array__heap}{Array\_heap}}\ *array\_heap,\ \mbox{\hyperlink{struct_array}{Array}}\ *array);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{runtime__data_8h_ac5de663299299023250cd8b451e394ec}{print\_stack}}(\mbox{\hyperlink{struct_frame}{Frame}}\ *frame);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{runtime__data_8h_ab26a58fdcfed22210c71bbfa331c1a4a}{print\_locals}}(\mbox{\hyperlink{struct_frame}{Frame}}\ *frame);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,52 @@
+\doxysection{class\+\_\+file.\+h}
+\hypertarget{class__file_8h_source}{}\label{class__file_8h_source}\index{include/class\_loader/class\_file.h@{include/class\_loader/class\_file.h}}
+\mbox{\hyperlink{class__file_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CLASS\_FILE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CLASS\_FILE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bytes_8h}{class\_loader/bytes.h}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{attribute_8h}{class\_loader/attribute.h}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{field_8h}{class\_loader/field.h}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{method_8h}{class\_loader/method.h}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{constant__pool_8h}{class\_loader/constant\_pool.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structclass__file}{class\_file}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{structclass__file_a85eeca89e225dff97572e4101bddf809}{magic}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structclass__file_af362259638ccc177e18363c5ca419f5a}{minor\_version}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structclass__file_aacfd70a757d576327ee05bad69449e8e}{major\_version}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structclass__file_a16efa35301a6defb65ec2372ee87b9e3}{constant\_pool\_count}};\ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{structcp__info__struct}{cp\_info}}\ *\mbox{\hyperlink{structclass__file_ace877d4e41ec77e994e9ad51379d611e}{constant\_pool}};\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structclass__file_a8aac8de1d9d72e95257078d25792cb49}{access\_flags}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structclass__file_a7128e599618f05d320e275f06d52a4cd}{this\_class}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structclass__file_a636a77b3213838147827e280ee890399}{super\_class}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structclass__file_a4b8bc154339e1ec07b8d4aa7cdd17f86}{interfaces\_count}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ *\mbox{\hyperlink{structclass__file_a48e82d8b60dd43b81c15c0f5f534102f}{interfaces}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structclass__file_a62a092b3f156f859c8dadd7698783ef4}{fields\_count}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{structfield__info__struct}{field\_info}}\ *\mbox{\hyperlink{structclass__file_abeab5eb559767819c961855264808304}{fields}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structclass__file_a75f7815370a51fc2c80c0371dd10fac5}{methods\_count}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{structmethod__info__struct}{method\_info}}\ *\mbox{\hyperlink{structclass__file_ace8bf4031ef7404e7f706539158df8a4}{methods}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structclass__file_a97d635072677aedf4a30f48128726c00}{attributes\_count}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{structattribute__info}{attribute\_info}}\ *\mbox{\hyperlink{structclass__file_afeba4e482f0b6f6c382c6f681bfceb12}{attributes}};\ }
+\DoxyCodeLine{00037\ \}\ \mbox{\hyperlink{structclass__file}{ClassFile}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \mbox{\hyperlink{structclass__file}{ClassFile}}\ *\mbox{\hyperlink{class__file_8h_a824c47f6a4c1fdead30d9e4e72cd892d}{create\_classfile}}(FILE\ *file);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__file_8h_ae5e87c054a511556a791fd23f9885263}{destroy\_classfile}}(\mbox{\hyperlink{structclass__file}{ClassFile}}*\ cf);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{class__file_8h_aad276fa026f0537d2628a93dcb49f7a5}{get\_method\_name}}(\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ count,\ \mbox{\hyperlink{structcp__info__struct}{cp\_info}}\ *constant\_pool,\ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ Methodref\_index);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{class__file_8h_a9bb081fad3f81147ab3ef3cae0749353}{get\_method\_descriptor}}(\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ count,\ \mbox{\hyperlink{structcp__info__struct}{cp\_info}}\ *constant\_pool,\ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ Methodref\_index);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00089\ \mbox{\hyperlink{structmethod__info__struct}{method\_info}}\ *\mbox{\hyperlink{class__file_8h_a1bdf5917540bbdab50ed3e3a3ec4515d}{get\_method\_info}}(\mbox{\hyperlink{structclass__file}{ClassFile}}\ *\mbox{\hyperlink{structclass__file}{class\_file}},\ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ count,\ \mbox{\hyperlink{structcp__info__struct}{cp\_info}}\ *constant\_pool,\ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ Methodref\_index);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CLASS\_FILE\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,75 @@
+\doxysection{include/class\+\_\+loader/attribute.h File Reference}
+\hypertarget{attribute_8h}{}\label{attribute_8h}\index{include/class\_loader/attribute.h@{include/class\_loader/attribute.h}}
+
+
+Declarações de estruturas e funções para manipulação de atributos de classes Java.  
+
+
+{\ttfamily \#include $<$class\+\_\+loader/bytes.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/constant\+\_\+pool.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structattribute__info}{attribute\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar informações de atributos genéricos. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structexception__table}{exception\+\_\+table}}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar informações da tabela de exceções. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcode__attribute}{code\+\_\+attribute}}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar informações de atributos de código. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structattribute__info}{attribute\+\_\+info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{attribute_8h_acc26148d3f0658da95eebd23947671c1}{create\+\_\+attributes}} (FILE \texorpdfstring{$\ast$}{*}file, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} count)
+\begin{DoxyCompactList}\small\item\em Cria um array de atributos a partir de um arquivo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcode__attribute}{code\+\_\+attribute}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{attribute_8h_aa66a2fb9206c2388c1c5565fff18502c}{get\+\_\+code\+\_\+attribute}} (\mbox{\hyperlink{structattribute__info}{attribute\+\_\+info}} \texorpdfstring{$\ast$}{*}attribute, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} count, \mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}constant\+\_\+pool)
+\begin{DoxyCompactList}\small\item\em Obtém um atributo de código a partir de um array de atributos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declarações de estruturas e funções para manipulação de atributos de classes Java. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{attribute_8h_acc26148d3f0658da95eebd23947671c1}\index{attribute.h@{attribute.h}!create\_attributes@{create\_attributes}}
+\index{create\_attributes@{create\_attributes}!attribute.h@{attribute.h}}
+\doxysubsubsection{\texorpdfstring{create\_attributes()}{create\_attributes()}}
+{\footnotesize\ttfamily \label{attribute_8h_acc26148d3f0658da95eebd23947671c1} 
+\mbox{\hyperlink{structattribute__info}{attribute\+\_\+info}} \texorpdfstring{$\ast$}{*} create\+\_\+attributes (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Cria um array de atributos a partir de um arquivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Ponteiro para o arquivo que contém os dados dos atributos. \\
+\hline
+{\em count} & Número de atributos a serem lidos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o array de atributos criado. 
+\end{DoxyReturn}
+\Hypertarget{attribute_8h_aa66a2fb9206c2388c1c5565fff18502c}\index{attribute.h@{attribute.h}!get\_code\_attribute@{get\_code\_attribute}}
+\index{get\_code\_attribute@{get\_code\_attribute}!attribute.h@{attribute.h}}
+\doxysubsubsection{\texorpdfstring{get\_code\_attribute()}{get\_code\_attribute()}}
+{\footnotesize\ttfamily \label{attribute_8h_aa66a2fb9206c2388c1c5565fff18502c} 
+\mbox{\hyperlink{structcode__attribute}{code\+\_\+attribute}} \texorpdfstring{$\ast$}{*} get\+\_\+code\+\_\+attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structattribute__info}{attribute\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{attribute}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{count}{, }\item[{\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{constant\+\_\+pool}{}\end{DoxyParamCaption})}
+
+
+
+Obtém um atributo de código a partir de um array de atributos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attribute} & Ponteiro para o array de atributos. \\
+\hline
+{\em count} & Número de atributos no array. \\
+\hline
+{\em constant\+\_\+pool} & Ponteiro para o pool de constantes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o atributo de código encontrado, ou NULL se não for encontrado. 
+\end{DoxyReturn}

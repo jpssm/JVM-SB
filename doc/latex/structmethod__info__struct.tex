@@ -1,0 +1,73 @@
+\doxysection{method\+\_\+info\+\_\+struct Struct Reference}
+\hypertarget{structmethod__info__struct}{}\label{structmethod__info__struct}\index{method\_info\_struct@{method\_info\_struct}}
+
+
+Estrutura para armazenar informações de métodos de uma classe Java.  
+
+
+
+
+{\ttfamily \#include $<$method.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structmethod__info__struct_a09d78f2123c685f69c46043d0d2da743}{access\+\_\+flags}}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structmethod__info__struct_ad001944d263c760e6b4da54490b5dae4}{name\+\_\+index}}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structmethod__info__struct_aad3cfb07229dba584c279ee9216decf6}{descriptor\+\_\+index}}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structmethod__info__struct_aef6416a6f61f4bc6523ed2147c44e5c4}{attributes\+\_\+count}}
+\item 
+\mbox{\hyperlink{structattribute__info}{attribute\+\_\+info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structmethod__info__struct_a430b00f8fd8673537e7c02a41c01e67c}{attributes}}
+\item 
+\mbox{\hyperlink{structcode__attribute}{code\+\_\+attribute}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structmethod__info__struct_a0e8caa24cba8b56d083996d5fd62108f}{code\+\_\+attribute}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estrutura para armazenar informações de métodos de uma classe Java. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structmethod__info__struct_a09d78f2123c685f69c46043d0d2da743}\index{method\_info\_struct@{method\_info\_struct}!access\_flags@{access\_flags}}
+\index{access\_flags@{access\_flags}!method\_info\_struct@{method\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{access\_flags}{access\_flags}}
+{\footnotesize\ttfamily \label{structmethod__info__struct_a09d78f2123c685f69c46043d0d2da743} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} method\+\_\+info\+\_\+struct\+::access\+\_\+flags}
+
+Flags de acesso do método. \Hypertarget{structmethod__info__struct_a430b00f8fd8673537e7c02a41c01e67c}\index{method\_info\_struct@{method\_info\_struct}!attributes@{attributes}}
+\index{attributes@{attributes}!method\_info\_struct@{method\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \label{structmethod__info__struct_a430b00f8fd8673537e7c02a41c01e67c} 
+\mbox{\hyperlink{structattribute__info}{attribute\+\_\+info}}\texorpdfstring{$\ast$}{*} method\+\_\+info\+\_\+struct\+::attributes}
+
+Ponteiro para os atributos adicionais deste método. \Hypertarget{structmethod__info__struct_aef6416a6f61f4bc6523ed2147c44e5c4}\index{method\_info\_struct@{method\_info\_struct}!attributes\_count@{attributes\_count}}
+\index{attributes\_count@{attributes\_count}!method\_info\_struct@{method\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{attributes\_count}{attributes\_count}}
+{\footnotesize\ttfamily \label{structmethod__info__struct_aef6416a6f61f4bc6523ed2147c44e5c4} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} method\+\_\+info\+\_\+struct\+::attributes\+\_\+count}
+
+Número de atributos adicionais deste método. \Hypertarget{structmethod__info__struct_a0e8caa24cba8b56d083996d5fd62108f}\index{method\_info\_struct@{method\_info\_struct}!code\_attribute@{code\_attribute}}
+\index{code\_attribute@{code\_attribute}!method\_info\_struct@{method\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{code\_attribute}{code\_attribute}}
+{\footnotesize\ttfamily \label{structmethod__info__struct_a0e8caa24cba8b56d083996d5fd62108f} 
+\mbox{\hyperlink{structcode__attribute}{code\+\_\+attribute}}\texorpdfstring{$\ast$}{*} method\+\_\+info\+\_\+struct\+::code\+\_\+attribute}
+
+Ponteiro para o atributo de código deste método (se houver). \Hypertarget{structmethod__info__struct_aad3cfb07229dba584c279ee9216decf6}\index{method\_info\_struct@{method\_info\_struct}!descriptor\_index@{descriptor\_index}}
+\index{descriptor\_index@{descriptor\_index}!method\_info\_struct@{method\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{descriptor\_index}{descriptor\_index}}
+{\footnotesize\ttfamily \label{structmethod__info__struct_aad3cfb07229dba584c279ee9216decf6} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} method\+\_\+info\+\_\+struct\+::descriptor\+\_\+index}
+
+Índice no pool de constantes que indica o descritor do método. \Hypertarget{structmethod__info__struct_ad001944d263c760e6b4da54490b5dae4}\index{method\_info\_struct@{method\_info\_struct}!name\_index@{name\_index}}
+\index{name\_index@{name\_index}!method\_info\_struct@{method\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{name\_index}{name\_index}}
+{\footnotesize\ttfamily \label{structmethod__info__struct_ad001944d263c760e6b4da54490b5dae4} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} method\+\_\+info\+\_\+struct\+::name\+\_\+index}
+
+Índice no pool de constantes que indica o nome do método. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/class\+\_\+loader/\mbox{\hyperlink{method_8h}{method.\+h}}\end{DoxyCompactItemize}

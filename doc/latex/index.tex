@@ -1,0 +1,87 @@
+\chapter{README -\/ JVM}
+\hypertarget{index}{}\label{index}\index{README -\/ JVM@{README -\/ JVM}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+\hypertarget{index_autotoc_md1}{}\doxysubsection{\texorpdfstring{Integrantes}{Integrantes}}\label{index_autotoc_md1}
+Felipe N Rocha -\/ 17/0050084
+
+Solano Dias Pereira -\/ 17/0114392
+
+João Pedro de Sousa Soares Martins -\/ 20/0020692
+
+Saulo Oliveira de Freitas -\/ 21/1000176\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Documentação}{Documentação}}\label{index_autotoc_md2}
+É posssível acessar a documentação e descrição das estruturas e funções do projeto no arquivo index.\+html dentro da pasta docs/html, onde é encontrada a documentação Doxygen do projeto.\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Requisitos do Sistema}{Requisitos do Sistema}}\label{index_autotoc_md3}
+Para compilar e executar o projeto, você precisará dos seguintes componentes instalados no seu sistema\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{GCC (GNU Compiler Collection)}}
+\begin{DoxyItemize}
+\item Para instalar o GCC no seu sistema\+:
+\begin{DoxyItemize}
+\item {\bfseries{Ubuntu/\+Debian}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt\ update}
+\DoxyCodeLine{sudo\ apt\ install\ build-\/essential}
+
+\end{DoxyCode}
+
+\item {\bfseries{Fedora}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ dnf\ group\ install\ "{}Development\ Tools"{}}
+
+\end{DoxyCode}
+
+\item {\bfseries{mac\+OS}}\+: {\ttfamily sh brew install gcc }
+\item {\bfseries{Windows}}\+:
+\begin{DoxyItemize}
+\item Baixe e instale o \href{http://mingw-w64.org/doku.php}{\texttt{ Min\+GW-\/w64}} ou utilize o \href{https://docs.microsoft.com/en-us/windows/wsl/install}{\texttt{ WSL (Windows Subsystem for Linux)}}.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item {\bfseries{Make}}
+\begin{DoxyItemize}
+\item Para instalar o Make no seu sistema\+:
+\begin{DoxyItemize}
+\item {\bfseries{Ubuntu/\+Debian}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt\ update}
+\DoxyCodeLine{sudo\ apt\ install\ make}
+
+\end{DoxyCode}
+
+\item {\bfseries{Fedora}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ dnf\ install\ make}
+
+\end{DoxyCode}
+
+\item {\bfseries{mac\+OS}}\+: {\ttfamily sh brew install make }
+\item {\bfseries{Windows}}\+:
+\begin{DoxyItemize}
+\item Make geralmente está incluído no pacote do Min\+GW-\/w64. Alternativamente, pode-\/se utilizar o \href{http://gnuwin32.sourceforge.net/packages/make.htm}{\texttt{ Gnu\+Win}}.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Compilação do projeto}{Compilação do projeto}}\label{index_autotoc_md4}
+Para executar o projeto é preciso compilar o programa, utilizando o seguinte comando no diretório raiz\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{Como usar}{Como usar}}\label{index_autotoc_md5}
+Basta chamar o executável junto com o caminho para o arquivo .class que se deseja analizar.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{main.exe\ <caminho-\/do-\/arquivo\ .class>}
+\DoxyCodeLine{}
+\DoxyCodeLine{./main\ <caminho-\/do-\/arquivo\ .class>}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{Estrutura do projeto}{Estrutura do projeto}}\label{index_autotoc_md6}
+Este projeto está dividido em duas partes\+:
+
+A primeira visa a implementação de um leitor exibidor capaz de ler uma arquivo ponto class e apresentar as estruturas nele contidas, de forma similar ao visualizador jclasslib (Opção 1 do menu ao exectuar o código). Para isto Foram aplicados os conceitos estudados em sala de aula para desenvolver usa uma estrutura de dados chamada Class\+File para armazenar as informações lidas do arquivo de bytecode.
+
+A segunda é a implementação de uma JVM que irá executar os Bytecode Java gerados pela leitura do Class\+File.\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{Diagrama de Comunicação Entre módulos\+:}{Diagrama de Comunicação Entre módulos\+:}}\label{index_autotoc_md7}

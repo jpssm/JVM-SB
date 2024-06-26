@@ -1,0 +1,113 @@
+\doxysection{Frame Struct Reference}
+\hypertarget{struct_frame}{}\label{struct_frame}\index{Frame@{Frame}}
+
+
+Representa um frame de pilha na JVM.  
+
+
+
+
+{\ttfamily \#include $<$runtime\+\_\+data.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_frame_ada1bd832b6f72f87a35d88c68b9a188a}{cp}}
+\item 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{struct_frame_ada6a6cf76d00cbadf43a86a686dd026c}{pc}}
+\item 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_frame_a967c8ce20bdbd75748b3dc77e0031647}{operand\+\_\+stack}}
+\item 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_frame_a2edeb1231af2ad66ff13c0a456840fb8}{operand\+\_\+stack\+\_\+base}}
+\item 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_frame_a27b758f0f13db457e50e9e96fd2e1736}{locals}}
+\item 
+\mbox{\hyperlink{structmethod__info__struct}{method\+\_\+info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_frame_af0943cac72b53aa5aa67f3e7097430a1}{method}}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{struct_frame_ab89cc17f0ec6475024093b021fb57f78}{method\+\_\+info\+\_\+index}}
+\item 
+\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_frame_a74003e7455cbd2ae858a24fe576200a3}{code}}
+\item 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{struct_frame_ac02f1591630470f5041701298e120547}{code\+\_\+lenght}}
+\item 
+struct \mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_frame_adb08c0fa81a0d902dad9b8691f2abff4}{next}}
+\item 
+struct \mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_frame_a66b35fb4f1a1d3b66c5b36ffe574b3bb}{previous}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um frame de pilha na JVM. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_frame_a74003e7455cbd2ae858a24fe576200a3}\index{Frame@{Frame}!code@{code}}
+\index{code@{code}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{code}{code}}
+{\footnotesize\ttfamily \label{struct_frame_a74003e7455cbd2ae858a24fe576200a3} 
+\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}\texorpdfstring{$\ast$}{*} Frame\+::code}
+
+Ponteiro para o bytecode do método. \Hypertarget{struct_frame_ac02f1591630470f5041701298e120547}\index{Frame@{Frame}!code\_lenght@{code\_lenght}}
+\index{code\_lenght@{code\_lenght}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{code\_lenght}{code\_lenght}}
+{\footnotesize\ttfamily \label{struct_frame_ac02f1591630470f5041701298e120547} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} Frame\+::code\+\_\+lenght}
+
+Comprimento do bytecode. \Hypertarget{struct_frame_ada1bd832b6f72f87a35d88c68b9a188a}\index{Frame@{Frame}!cp@{cp}}
+\index{cp@{cp}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{cp}{cp}}
+{\footnotesize\ttfamily \label{struct_frame_ada1bd832b6f72f87a35d88c68b9a188a} 
+\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}}\texorpdfstring{$\ast$}{*} Frame\+::cp}
+
+Ponteiro para a pool de constantes. \Hypertarget{struct_frame_a27b758f0f13db457e50e9e96fd2e1736}\index{Frame@{Frame}!locals@{locals}}
+\index{locals@{locals}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{locals}{locals}}
+{\footnotesize\ttfamily \label{struct_frame_a27b758f0f13db457e50e9e96fd2e1736} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\texorpdfstring{$\ast$}{*} Frame\+::locals}
+
+\doxylink{struct_array}{Array} de variáveis locais. \Hypertarget{struct_frame_af0943cac72b53aa5aa67f3e7097430a1}\index{Frame@{Frame}!method@{method}}
+\index{method@{method}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{method}{method}}
+{\footnotesize\ttfamily \label{struct_frame_af0943cac72b53aa5aa67f3e7097430a1} 
+\mbox{\hyperlink{structmethod__info__struct}{method\+\_\+info}}\texorpdfstring{$\ast$}{*} Frame\+::method}
+
+Ponteiro para a informação do método. \Hypertarget{struct_frame_ab89cc17f0ec6475024093b021fb57f78}\index{Frame@{Frame}!method\_info\_index@{method\_info\_index}}
+\index{method\_info\_index@{method\_info\_index}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{method\_info\_index}{method\_info\_index}}
+{\footnotesize\ttfamily \label{struct_frame_ab89cc17f0ec6475024093b021fb57f78} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} Frame\+::method\+\_\+info\+\_\+index}
+
+Índice para a informação do método. \Hypertarget{struct_frame_adb08c0fa81a0d902dad9b8691f2abff4}\index{Frame@{Frame}!next@{next}}
+\index{next@{next}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \label{struct_frame_adb08c0fa81a0d902dad9b8691f2abff4} 
+struct \mbox{\hyperlink{struct_frame}{Frame}}\texorpdfstring{$\ast$}{*} Frame\+::next}
+
+Ponteiro para o próximo frame na pilha. \Hypertarget{struct_frame_a967c8ce20bdbd75748b3dc77e0031647}\index{Frame@{Frame}!operand\_stack@{operand\_stack}}
+\index{operand\_stack@{operand\_stack}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{operand\_stack}{operand\_stack}}
+{\footnotesize\ttfamily \label{struct_frame_a967c8ce20bdbd75748b3dc77e0031647} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\texorpdfstring{$\ast$}{*} Frame\+::operand\+\_\+stack}
+
+Ponteiro para a pilha de operandos. \Hypertarget{struct_frame_a2edeb1231af2ad66ff13c0a456840fb8}\index{Frame@{Frame}!operand\_stack\_base@{operand\_stack\_base}}
+\index{operand\_stack\_base@{operand\_stack\_base}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{operand\_stack\_base}{operand\_stack\_base}}
+{\footnotesize\ttfamily \label{struct_frame_a2edeb1231af2ad66ff13c0a456840fb8} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\texorpdfstring{$\ast$}{*} Frame\+::operand\+\_\+stack\+\_\+base}
+
+Ponteiro base para a pilha de operandos. \Hypertarget{struct_frame_ada6a6cf76d00cbadf43a86a686dd026c}\index{Frame@{Frame}!pc@{pc}}
+\index{pc@{pc}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{pc}{pc}}
+{\footnotesize\ttfamily \label{struct_frame_ada6a6cf76d00cbadf43a86a686dd026c} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} Frame\+::pc}
+
+Contador de programa. \Hypertarget{struct_frame_a66b35fb4f1a1d3b66c5b36ffe574b3bb}\index{Frame@{Frame}!previous@{previous}}
+\index{previous@{previous}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{previous}{previous}}
+{\footnotesize\ttfamily \label{struct_frame_a66b35fb4f1a1d3b66c5b36ffe574b3bb} 
+struct \mbox{\hyperlink{struct_frame}{Frame}}\texorpdfstring{$\ast$}{*} Frame\+::previous}
+
+Ponteiro para o frame anterior na pilha. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/runtime\+\_\+data/\mbox{\hyperlink{runtime__data_8h}{runtime\+\_\+data.\+h}}\end{DoxyCompactItemize}

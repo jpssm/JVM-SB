@@ -1,0 +1,57 @@
+\doxysection{exception\+\_\+table Struct Reference}
+\hypertarget{structexception__table}{}\label{structexception__table}\index{exception\_table@{exception\_table}}
+
+
+Estrutura para armazenar informações da tabela de exceções.  
+
+
+
+
+{\ttfamily \#include $<$attribute.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structexception__table_a63da93a2b0f5dc61b3a158a0c7384602}{start\+\_\+pc}}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structexception__table_aeb4c86c92f02d6fccd52a0a9be9c5dac}{end\+\_\+pc}}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structexception__table_a8fe6fb5063598ad0d48aab5e617d6a35}{handler\+\_\+pc}}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structexception__table_ade50b30a987f3d3452a6de69eee0ada5}{catch\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estrutura para armazenar informações da tabela de exceções. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structexception__table_ade50b30a987f3d3452a6de69eee0ada5}\index{exception\_table@{exception\_table}!catch\_type@{catch\_type}}
+\index{catch\_type@{catch\_type}!exception\_table@{exception\_table}}
+\doxysubsubsection{\texorpdfstring{catch\_type}{catch\_type}}
+{\footnotesize\ttfamily \label{structexception__table_ade50b30a987f3d3452a6de69eee0ada5} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} exception\+\_\+table\+::catch\+\_\+type}
+
+Índice no pool de constantes que indica o tipo de exceção a ser capturada. \Hypertarget{structexception__table_aeb4c86c92f02d6fccd52a0a9be9c5dac}\index{exception\_table@{exception\_table}!end\_pc@{end\_pc}}
+\index{end\_pc@{end\_pc}!exception\_table@{exception\_table}}
+\doxysubsubsection{\texorpdfstring{end\_pc}{end\_pc}}
+{\footnotesize\ttfamily \label{structexception__table_aeb4c86c92f02d6fccd52a0a9be9c5dac} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} exception\+\_\+table\+::end\+\_\+pc}
+
+Ponto de término do bloco de código a ser protegido. \Hypertarget{structexception__table_a8fe6fb5063598ad0d48aab5e617d6a35}\index{exception\_table@{exception\_table}!handler\_pc@{handler\_pc}}
+\index{handler\_pc@{handler\_pc}!exception\_table@{exception\_table}}
+\doxysubsubsection{\texorpdfstring{handler\_pc}{handler\_pc}}
+{\footnotesize\ttfamily \label{structexception__table_a8fe6fb5063598ad0d48aab5e617d6a35} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} exception\+\_\+table\+::handler\+\_\+pc}
+
+Ponto de início do manipulador de exceções. \Hypertarget{structexception__table_a63da93a2b0f5dc61b3a158a0c7384602}\index{exception\_table@{exception\_table}!start\_pc@{start\_pc}}
+\index{start\_pc@{start\_pc}!exception\_table@{exception\_table}}
+\doxysubsubsection{\texorpdfstring{start\_pc}{start\_pc}}
+{\footnotesize\ttfamily \label{structexception__table_a63da93a2b0f5dc61b3a158a0c7384602} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} exception\+\_\+table\+::start\+\_\+pc}
+
+Ponto de início do bloco de código a ser protegido. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/class\+\_\+loader/\mbox{\hyperlink{attribute_8h}{attribute.\+h}}\end{DoxyCompactItemize}

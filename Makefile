@@ -1,6 +1,6 @@
 # Compilador e flags
 CC = gcc
-CFLAGS = -g -c -Iinclude -Wno-unused-variable -std=c99
+CFLAGS = -g -c -Iinclude -Wno-unused-variable -std=c99 
 
 #CFLAGS = -c -Iinclude -Wall -Wextra -std=c99
 LDFLAGS = 

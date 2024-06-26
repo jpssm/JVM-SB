@@ -1,0 +1,148 @@
+\doxysection{cp\+\_\+info\+\_\+struct Struct Reference}
+\hypertarget{structcp__info__struct}{}\label{structcp__info__struct}\index{cp\_info\_struct@{cp\_info\_struct}}
+
+
+Estrutura que representa um item da pool de constantes.  
+
+
+
+
+{\ttfamily \#include $<$constant\+\_\+pool.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \mbox{\hyperlink{structcp__info__struct_a568e8b0382ba7ba6b6c4a3d72f281562}{tag}}
+\item 
+\Hypertarget{structcp__info__struct_a10f0597cf71df8d5a8dca9908ca8997d}\label{structcp__info__struct_a10f0597cf71df8d5a8dca9908ca8997d} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcp__info__struct_acdcb43760137e2da0aec953ee289536f}{name\_index}}\\
+\>\} {\bfseries Class}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcp__info__struct_abc25307039971e1ac97dd8107c904ea2}{class\_index}}\\
+\>\>\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcp__info__struct_acf7c0ac8cdd09226b487e5c14d72140b}{name\_and\_type\_index}}\\
+\>\} {\bfseries Fieldref}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcp__info__struct_abc25307039971e1ac97dd8107c904ea2}{class\_index}}\\
+\>\>\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcp__info__struct_acf7c0ac8cdd09226b487e5c14d72140b}{name\_and\_type\_index}}\\
+\>\} {\bfseries Methodref}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcp__info__struct_abc25307039971e1ac97dd8107c904ea2}{class\_index}}\\
+\>\>\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcp__info__struct_acf7c0ac8cdd09226b487e5c14d72140b}{name\_and\_type\_index}}\\
+\>\} {\bfseries InterfaceMethodref}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcp__info__struct_acdde0a54cfdbf7117c289b46be25edd3}{string\_index}}\\
+\>\} {\bfseries String}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{structcp__info__struct_a5ae767aeed0777c74ecd6447f2813e73}{bytes}}\\
+\>\} {\bfseries Integer}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{structcp__info__struct_a5ae767aeed0777c74ecd6447f2813e73}{bytes}}\\
+\>\} {\bfseries Float}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{structcp__info__struct_a1b1b71cc72603201d70ae667d93293b3}{high\_bytes}}\\
+\>\>\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{structcp__info__struct_a0f371c0c69f6c847b9433939e1fd91e6}{low\_bytes}}\\
+\>\} {\bfseries Long}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{structcp__info__struct_a1b1b71cc72603201d70ae667d93293b3}{high\_bytes}}\\
+\>\>\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{structcp__info__struct_a0f371c0c69f6c847b9433939e1fd91e6}{low\_bytes}}\\
+\>\} {\bfseries Double}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcp__info__struct_acdcb43760137e2da0aec953ee289536f}{name\_index}}\\
+\>\>\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcp__info__struct_ae4c67a874f5ccdeb6dacb68019d4aec6}{descriptor\_index}}\\
+\>\} {\bfseries NameAndType}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcp__info__struct_a98885566f565edb61a03fba849b4cdde}{length}}\\
+\>\>\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcp__info__struct_aecb776685fef4c1d542618b5d6487524}{bytes}}\\
+\>\} {\bfseries Utf8}\\
+\} {\bfseries info}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estrutura que representa um item da pool de constantes. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structcp__info__struct_a5ae767aeed0777c74ecd6447f2813e73}\index{cp\_info\_struct@{cp\_info\_struct}!bytes@{bytes}}
+\index{bytes@{bytes}!cp\_info\_struct@{cp\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{bytes}{bytes}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{structcp__info__struct_a5ae767aeed0777c74ecd6447f2813e73} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} cp\+\_\+info\+\_\+struct\+::bytes}
+
+Valor inteiro de 32 bits.
+
+Valor de ponto flutuante de 32 bits. \Hypertarget{structcp__info__struct_aecb776685fef4c1d542618b5d6487524}\index{cp\_info\_struct@{cp\_info\_struct}!bytes@{bytes}}
+\index{bytes@{bytes}!cp\_info\_struct@{cp\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{bytes}{bytes}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{structcp__info__struct_aecb776685fef4c1d542618b5d6487524} 
+\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}\texorpdfstring{$\ast$}{*} cp\+\_\+info\+\_\+struct\+::bytes}
+
+Ponteiro para os bytes da string UTF-\/8. \Hypertarget{structcp__info__struct_abc25307039971e1ac97dd8107c904ea2}\index{cp\_info\_struct@{cp\_info\_struct}!class\_index@{class\_index}}
+\index{class\_index@{class\_index}!cp\_info\_struct@{cp\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{class\_index}{class\_index}}
+{\footnotesize\ttfamily \label{structcp__info__struct_abc25307039971e1ac97dd8107c904ea2} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} cp\+\_\+info\+\_\+struct\+::class\+\_\+index}
+
+Índice para a classe. \Hypertarget{structcp__info__struct_ae4c67a874f5ccdeb6dacb68019d4aec6}\index{cp\_info\_struct@{cp\_info\_struct}!descriptor\_index@{descriptor\_index}}
+\index{descriptor\_index@{descriptor\_index}!cp\_info\_struct@{cp\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{descriptor\_index}{descriptor\_index}}
+{\footnotesize\ttfamily \label{structcp__info__struct_ae4c67a874f5ccdeb6dacb68019d4aec6} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} cp\+\_\+info\+\_\+struct\+::descriptor\+\_\+index}
+
+Índice para o descritor. \Hypertarget{structcp__info__struct_a1b1b71cc72603201d70ae667d93293b3}\index{cp\_info\_struct@{cp\_info\_struct}!high\_bytes@{high\_bytes}}
+\index{high\_bytes@{high\_bytes}!cp\_info\_struct@{cp\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{high\_bytes}{high\_bytes}}
+{\footnotesize\ttfamily \label{structcp__info__struct_a1b1b71cc72603201d70ae667d93293b3} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} cp\+\_\+info\+\_\+struct\+::high\+\_\+bytes}
+
+Bytes mais significativos do valor inteiro de 64 bits.
+
+Bytes mais significativos do valor de ponto flutuante de 64 bits. \Hypertarget{structcp__info__struct_a98885566f565edb61a03fba849b4cdde}\index{cp\_info\_struct@{cp\_info\_struct}!length@{length}}
+\index{length@{length}!cp\_info\_struct@{cp\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily \label{structcp__info__struct_a98885566f565edb61a03fba849b4cdde} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} cp\+\_\+info\+\_\+struct\+::length}
+
+Comprimento da string UTF-\/8. \Hypertarget{structcp__info__struct_a0f371c0c69f6c847b9433939e1fd91e6}\index{cp\_info\_struct@{cp\_info\_struct}!low\_bytes@{low\_bytes}}
+\index{low\_bytes@{low\_bytes}!cp\_info\_struct@{cp\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{low\_bytes}{low\_bytes}}
+{\footnotesize\ttfamily \label{structcp__info__struct_a0f371c0c69f6c847b9433939e1fd91e6} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} cp\+\_\+info\+\_\+struct\+::low\+\_\+bytes}
+
+Bytes menos significativos do valor inteiro de 64 bits.
+
+Bytes menos significativos do valor de ponto flutuante de 64 bits. \Hypertarget{structcp__info__struct_acf7c0ac8cdd09226b487e5c14d72140b}\index{cp\_info\_struct@{cp\_info\_struct}!name\_and\_type\_index@{name\_and\_type\_index}}
+\index{name\_and\_type\_index@{name\_and\_type\_index}!cp\_info\_struct@{cp\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{name\_and\_type\_index}{name\_and\_type\_index}}
+{\footnotesize\ttfamily \label{structcp__info__struct_acf7c0ac8cdd09226b487e5c14d72140b} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} cp\+\_\+info\+\_\+struct\+::name\+\_\+and\+\_\+type\+\_\+index}
+
+Índice para o nome e tipo. \Hypertarget{structcp__info__struct_acdcb43760137e2da0aec953ee289536f}\index{cp\_info\_struct@{cp\_info\_struct}!name\_index@{name\_index}}
+\index{name\_index@{name\_index}!cp\_info\_struct@{cp\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{name\_index}{name\_index}}
+{\footnotesize\ttfamily \label{structcp__info__struct_acdcb43760137e2da0aec953ee289536f} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} cp\+\_\+info\+\_\+struct\+::name\+\_\+index}
+
+Índice para o nome da classe.
+
+Índice para o nome. \Hypertarget{structcp__info__struct_acdde0a54cfdbf7117c289b46be25edd3}\index{cp\_info\_struct@{cp\_info\_struct}!string\_index@{string\_index}}
+\index{string\_index@{string\_index}!cp\_info\_struct@{cp\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{string\_index}{string\_index}}
+{\footnotesize\ttfamily \label{structcp__info__struct_acdde0a54cfdbf7117c289b46be25edd3} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} cp\+\_\+info\+\_\+struct\+::string\+\_\+index}
+
+Índice para a string. \Hypertarget{structcp__info__struct_a568e8b0382ba7ba6b6c4a3d72f281562}\index{cp\_info\_struct@{cp\_info\_struct}!tag@{tag}}
+\index{tag@{tag}!cp\_info\_struct@{cp\_info\_struct}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily \label{structcp__info__struct_a568e8b0382ba7ba6b6c4a3d72f281562} 
+\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} cp\+\_\+info\+\_\+struct\+::tag}
+
+Tag que indica o tipo do item da pool de constantes. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/class\+\_\+loader/\mbox{\hyperlink{constant__pool_8h}{constant\+\_\+pool.\+h}}\end{DoxyCompactItemize}

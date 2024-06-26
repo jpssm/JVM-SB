@@ -1,3 +1,8 @@
+/**
+ * @file leitor_exibidor.h
+ * @brief Define funções para exibição de informações de um arquivo de classe Java.
+ */
+
 #ifndef LEITOR_EXIBIDOR_H
 #define LEITOR_EXIBIDOR_H
 
@@ -15,7 +20,11 @@
 #define CLEAR system("clear");
 #endif
 
+/**
+ * @brief Exibe informações detalhadas de um arquivo de classe Java.
+ * 
+ * @param cf Ponteiro para a estrutura ClassFile que representa o arquivo de classe Java.
+ */
 void showClass(ClassFile *cf);
-
 
 #endif

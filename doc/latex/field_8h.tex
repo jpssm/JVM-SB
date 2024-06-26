@@ -1,0 +1,53 @@
+\doxysection{include/class\+\_\+loader/field.h File Reference}
+\hypertarget{field_8h}{}\label{field_8h}\index{include/class\_loader/field.h@{include/class\_loader/field.h}}
+
+
+Declarações de estruturas e funções para manipulação de campos de classes Java.  
+
+
+{\ttfamily \#include $<$class\+\_\+loader/bytes.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/attribute.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfield__info__struct}{field\+\_\+info\+\_\+struct}}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar informações de campos (variáveis de instância) de uma classe Java. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{field_8h_ad388d2444186a5667df471b26d434c38}\label{field_8h_ad388d2444186a5667df471b26d434c38} 
+typedef struct \mbox{\hyperlink{structfield__info__struct}{field\+\_\+info\+\_\+struct}} {\bfseries field\+\_\+info}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfield__info__struct}{field\+\_\+info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{field_8h_adfa6dc9e09380b1a99753d3435e7a3c8}{create\+\_\+fields}} (FILE \texorpdfstring{$\ast$}{*}file, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} count)
+\begin{DoxyCompactList}\small\item\em Cria um array de estruturas field\+\_\+info a partir de um arquivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declarações de estruturas e funções para manipulação de campos de classes Java. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{field_8h_adfa6dc9e09380b1a99753d3435e7a3c8}\index{field.h@{field.h}!create\_fields@{create\_fields}}
+\index{create\_fields@{create\_fields}!field.h@{field.h}}
+\doxysubsubsection{\texorpdfstring{create\_fields()}{create\_fields()}}
+{\footnotesize\ttfamily \label{field_8h_adfa6dc9e09380b1a99753d3435e7a3c8} 
+\mbox{\hyperlink{structfield__info__struct}{field\+\_\+info}} \texorpdfstring{$\ast$}{*} create\+\_\+fields (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Cria um array de estruturas field\+\_\+info a partir de um arquivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Ponteiro para o arquivo que contém os dados dos campos. \\
+\hline
+{\em count} & Número de campos a serem lidos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o array de estruturas field\+\_\+info criado. 
+\end{DoxyReturn}

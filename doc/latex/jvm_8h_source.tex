@@ -1,0 +1,256 @@
+\doxysection{jvm.\+h}
+\hypertarget{jvm_8h_source}{}\label{jvm_8h_source}\index{include/execution\_engine/jvm.h@{include/execution\_engine/jvm.h}}
+\mbox{\hyperlink{jvm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ EXECUTION\_ENGINE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ EXECUTION\_ENGINE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bytes_8h}{class\_loader/bytes.h}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{runtime__data_8h}{runtime\_data/runtime\_data.h}}>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{jvm_8h_ad26e0f8a064081204d6ce18264d89b43}{retrunType}}\ \{\ I\_RETURN,\ L\_RETURN,\ F\_RETURN,\ D\_RETURN,\ A\_RETURN,\ RETURN\_\ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{struct_value__32_a3f99889ebc3f58f0d625ef2e7bd47712}{i}};\ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_value__32_a7e533f77c82038656f0fd1b5248c143d}{f}};\ }
+\DoxyCodeLine{00025\ \}\ \mbox{\hyperlink{struct_value__32}{Value\_32}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}}\ \mbox{\hyperlink{struct_value__64_a46ee3f544e33e102a8fd022b160956f8}{l}};\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_value__64_aecd12f443726f8b82dd917c08bb8bb26}{d}};\ }
+\DoxyCodeLine{00034\ \}\ \mbox{\hyperlink{struct_value__64}{Value\_64}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_control__flags_a93b44d2ab5df50d69b32f21c1f31132d}{was\_a\_call}}\ :\ 1;\ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_control__flags_a0e5b0f7732bb29ca221f2d5002486c80}{was\_a\_return}}\ :\ 1;\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_control__flags_a184373b6769a54a4571e23ba76029ef7}{method\_info\_index}};\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_control__flags_a666a286c270c904cf31423daa365e0d1}{return\_type}};\ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \}\ \mbox{\hyperlink{struct_control__flags}{Control\_flags}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{jvm_8h_a60de4c9f4ee4c5aaacfe23d18129971c}{jvm}}(\mbox{\hyperlink{structclass__file}{ClassFile}}\ *\ \textcolor{keyword}{class});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{jvm_8h_a146810f695e1b6ed39d79d3ac0f4ade9}{push}}(n);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{jvm_8h_afcbc803892a5fe935e5c255729060823}{push\_u8}}(\mbox{\hyperlink{struct_frame}{Frame}}\ *frame,\ \mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}}\ n);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{jvm_8h_af32ab1b0f83f2aadbca0a50d600303ca}{pop\_stack}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}}\ \mbox{\hyperlink{jvm_8h_a779edc67026c5fbe70be6ed1f08d38ef}{pop\_stack\_u8}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{jvm_8h_aa5c735ed716f994213f000ed21699d9c}{pass\_parameters}}(\mbox{\hyperlink{struct_frame}{Frame}}\ *caller\_frame,\ \mbox{\hyperlink{struct_frame}{Frame}}\ *called\_frame);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{extern}\ void\ (*\mbox{\hyperlink{jvm_8h_a37a387deb1d534aa31a560f13f0eb9e8}{interpreter}}[256])\ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{jvm_8h_a56315e41c65c5229c7ba211a747475c0}{intructions}}[256];}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{jvm_8h_a2adfbef19bab94b566098c5e1be103af}{nop}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\ \textcolor{comment}{//\ 0x00\ \ \ \ None}}
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{void}\ aconst\_null\ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x01\ \ \ \ None}}
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{void}\ iconst\_m1\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x02\ \ \ \ None}}
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ iconst\_0\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x03\ \ \ \ None}}
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ iconst\_1\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x04\ \ \ \ None}}
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ iconst\_2\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x05\ \ \ \ None}}
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{void}\ iconst\_3\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x06\ \ \ \ None}}
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ iconst\_4\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x07\ \ \ \ None}}
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{void}\ iconst\_5\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x08\ \ \ \ None}}
+\DoxyCodeLine{00113\ \textcolor{keywordtype}{void}\ lconst\_0\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x09\ \ \ \ None}}
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ lconst\_1\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x0a\ \ \ \ None}}
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{void}\ fconst\_0\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x0b\ \ \ \ None}}
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ fconst\_1\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x0c\ \ \ \ None}}
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{void}\ fconst\_2\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x0d\ \ \ \ None}}
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ dconst\_0\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x0e\ \ \ \ None}}
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{void}\ dconst\_1\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x0f\ \ \ \ None}}
+\DoxyCodeLine{00120\ \textcolor{keywordtype}{void}\ bipush\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x10\ \ \ \ Byte}}
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{void}\ sipush\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x11\ \ \ \ Short}}
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{void}\ ldc\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x12\ \ \ \ Byte\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{void}\ ldc\_w\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x13\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{void}\ ldc2\_w\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x14\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{void}\ iload\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x15\ \ \ \ Byte\ (local\ variable\ index)}}
+\DoxyCodeLine{00126\ \textcolor{keywordtype}{void}\ lload\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x16\ \ \ \ Byte\ (local\ variable\ index)}}
+\DoxyCodeLine{00127\ \textcolor{keywordtype}{void}\ fload\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x17\ \ \ \ Byte\ (local\ variable\ index)}}
+\DoxyCodeLine{00128\ \textcolor{keywordtype}{void}\ dload\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x18\ \ \ \ Byte\ (local\ variable\ index)}}
+\DoxyCodeLine{00129\ \textcolor{keywordtype}{void}\ aload\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x19\ \ \ \ Byte\ (local\ variable\ index)}}
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{void}\ iload\_0\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x1a\ \ \ \ None}}
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ iload\_1\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x1b\ \ \ \ None}}
+\DoxyCodeLine{00132\ \textcolor{keywordtype}{void}\ iload\_2\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x1c\ \ \ \ None}}
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{void}\ iload\_3\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x1d\ \ \ \ None}}
+\DoxyCodeLine{00134\ \textcolor{keywordtype}{void}\ lload\_0\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x1e\ \ \ \ None}}
+\DoxyCodeLine{00135\ \textcolor{keywordtype}{void}\ lload\_1\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x1f\ \ \ \ None}}
+\DoxyCodeLine{00136\ \textcolor{keywordtype}{void}\ lload\_2\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x20\ \ \ \ None}}
+\DoxyCodeLine{00137\ \textcolor{keywordtype}{void}\ lload\_3\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x21\ \ \ \ None}}
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{void}\ fload\_0\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x22\ \ \ \ None}}
+\DoxyCodeLine{00139\ \textcolor{keywordtype}{void}\ fload\_1\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x23\ \ \ \ None}}
+\DoxyCodeLine{00140\ \textcolor{keywordtype}{void}\ fload\_2\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x24\ \ \ \ None}}
+\DoxyCodeLine{00141\ \textcolor{keywordtype}{void}\ fload\_3\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x25\ \ \ \ None}}
+\DoxyCodeLine{00142\ \textcolor{keywordtype}{void}\ dload\_0\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x26\ \ \ \ None}}
+\DoxyCodeLine{00143\ \textcolor{keywordtype}{void}\ dload\_1\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x27\ \ \ \ None}}
+\DoxyCodeLine{00144\ \textcolor{keywordtype}{void}\ dload\_2\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x28\ \ \ \ None}}
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{void}\ dload\_3\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x29\ \ \ \ None}}
+\DoxyCodeLine{00146\ \textcolor{keywordtype}{void}\ aload\_0\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x2a\ \ \ \ None}}
+\DoxyCodeLine{00147\ \textcolor{keywordtype}{void}\ aload\_1\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x2b\ \ \ \ None}}
+\DoxyCodeLine{00148\ \textcolor{keywordtype}{void}\ aload\_2\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x2c\ \ \ \ None}}
+\DoxyCodeLine{00149\ \textcolor{keywordtype}{void}\ aload\_3\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x2d\ \ \ \ None}}
+\DoxyCodeLine{00150\ \textcolor{keywordtype}{void}\ iaload\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x2e\ \ \ \ None}}
+\DoxyCodeLine{00151\ \textcolor{keywordtype}{void}\ laload\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x2f\ \ \ \ None}}
+\DoxyCodeLine{00152\ \textcolor{keywordtype}{void}\ faload\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x30\ \ \ \ None}}
+\DoxyCodeLine{00153\ \textcolor{keywordtype}{void}\ daload\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x31\ \ \ \ None}}
+\DoxyCodeLine{00154\ \textcolor{keywordtype}{void}\ aaload\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x32\ \ \ \ None}}
+\DoxyCodeLine{00155\ \textcolor{keywordtype}{void}\ baload\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x33\ \ \ \ None}}
+\DoxyCodeLine{00156\ \textcolor{keywordtype}{void}\ caload\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x34\ \ \ \ None}}
+\DoxyCodeLine{00157\ \textcolor{keywordtype}{void}\ saload\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x35\ \ \ \ None}}
+\DoxyCodeLine{00158\ \textcolor{keywordtype}{void}\ istore\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x36\ \ \ \ Byte\ (local\ variable\ index)}}
+\DoxyCodeLine{00159\ \textcolor{keywordtype}{void}\ lstore\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x37\ \ \ \ Byte\ (local\ variable\ index)}}
+\DoxyCodeLine{00160\ \textcolor{keywordtype}{void}\ fstore\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x38\ \ \ \ Byte\ (local\ variable\ index)}}
+\DoxyCodeLine{00161\ \textcolor{keywordtype}{void}\ dstore\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x39\ \ \ \ Byte\ (local\ variable\ index)}}
+\DoxyCodeLine{00162\ \textcolor{keywordtype}{void}\ astore\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x3a\ \ \ \ Byte\ (local\ variable\ index)}}
+\DoxyCodeLine{00163\ \textcolor{keywordtype}{void}\ istore\_0\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x3b\ \ \ \ None}}
+\DoxyCodeLine{00164\ \textcolor{keywordtype}{void}\ istore\_1\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x3c\ \ \ \ None}}
+\DoxyCodeLine{00165\ \textcolor{keywordtype}{void}\ istore\_2\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x3d\ \ \ \ None}}
+\DoxyCodeLine{00166\ \textcolor{keywordtype}{void}\ istore\_3\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x3e\ \ \ \ None}}
+\DoxyCodeLine{00167\ \textcolor{keywordtype}{void}\ lstore\_0\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x3f\ \ \ \ None}}
+\DoxyCodeLine{00168\ \textcolor{keywordtype}{void}\ lstore\_1\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x40\ \ \ \ None}}
+\DoxyCodeLine{00169\ \textcolor{keywordtype}{void}\ lstore\_2\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x41\ \ \ \ None}}
+\DoxyCodeLine{00170\ \textcolor{keywordtype}{void}\ lstore\_3\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x42\ \ \ \ None}}
+\DoxyCodeLine{00171\ \textcolor{keywordtype}{void}\ fstore\_0\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x43\ \ \ \ None}}
+\DoxyCodeLine{00172\ \textcolor{keywordtype}{void}\ fstore\_1\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x44\ \ \ \ None}}
+\DoxyCodeLine{00173\ \textcolor{keywordtype}{void}\ fstore\_2\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x45\ \ \ \ None}}
+\DoxyCodeLine{00174\ \textcolor{keywordtype}{void}\ fstore\_3\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x46\ \ \ \ None}}
+\DoxyCodeLine{00175\ \textcolor{keywordtype}{void}\ dstore\_0\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x47\ \ \ \ None}}
+\DoxyCodeLine{00176\ \textcolor{keywordtype}{void}\ dstore\_1\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x48\ \ \ \ None}}
+\DoxyCodeLine{00177\ \textcolor{keywordtype}{void}\ dstore\_2\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x49\ \ \ \ None}}
+\DoxyCodeLine{00178\ \textcolor{keywordtype}{void}\ dstore\_3\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x4a\ \ \ \ None}}
+\DoxyCodeLine{00179\ \textcolor{keywordtype}{void}\ astore\_0\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x4b\ \ \ \ None}}
+\DoxyCodeLine{00180\ \textcolor{keywordtype}{void}\ astore\_1\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x4c\ \ \ \ None}}
+\DoxyCodeLine{00181\ \textcolor{keywordtype}{void}\ astore\_2\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x4d\ \ \ \ None}}
+\DoxyCodeLine{00182\ \textcolor{keywordtype}{void}\ astore\_3\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x4e\ \ \ \ None}}
+\DoxyCodeLine{00183\ \textcolor{keywordtype}{void}\ iastore\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x4f\ \ \ \ None}}
+\DoxyCodeLine{00184\ \textcolor{keywordtype}{void}\ lastore\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x50\ \ \ \ None}}
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{void}\ fastore\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x51\ \ \ \ None}}
+\DoxyCodeLine{00186\ \textcolor{keywordtype}{void}\ dastore\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x52\ \ \ \ None}}
+\DoxyCodeLine{00187\ \textcolor{keywordtype}{void}\ aastore\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x53\ \ \ \ None}}
+\DoxyCodeLine{00188\ \textcolor{keywordtype}{void}\ bastore\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x54\ \ \ \ None}}
+\DoxyCodeLine{00189\ \textcolor{keywordtype}{void}\ castore\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x55\ \ \ \ None}}
+\DoxyCodeLine{00190\ \textcolor{keywordtype}{void}\ sastore\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x56\ \ \ \ None}}
+\DoxyCodeLine{00191\ \textcolor{keywordtype}{void}\ pop\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x57\ \ \ \ None}}
+\DoxyCodeLine{00192\ \textcolor{keywordtype}{void}\ pop2\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x58\ \ \ \ None}}
+\DoxyCodeLine{00193\ \textcolor{keywordtype}{void}\ dup\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x59\ \ \ \ None}}
+\DoxyCodeLine{00194\ \textcolor{keywordtype}{void}\ dup\_x1\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x5a\ \ \ \ None}}
+\DoxyCodeLine{00195\ \textcolor{keywordtype}{void}\ dup\_x2\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x5b\ \ \ \ None}}
+\DoxyCodeLine{00196\ \textcolor{keywordtype}{void}\ dup2\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x5c\ \ \ \ None}}
+\DoxyCodeLine{00197\ \textcolor{keywordtype}{void}\ dup2\_x1\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x5d\ \ \ \ None}}
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{void}\ dup2\_x2\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x5e\ \ \ \ None}}
+\DoxyCodeLine{00199\ \textcolor{keywordtype}{void}\ swap\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x5f\ \ \ \ None}}
+\DoxyCodeLine{00200\ \textcolor{keywordtype}{void}\ iadd\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x60\ \ \ \ None}}
+\DoxyCodeLine{00201\ \textcolor{keywordtype}{void}\ ladd\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x61\ \ \ \ None}}
+\DoxyCodeLine{00202\ \textcolor{keywordtype}{void}\ fadd\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x62\ \ \ \ None}}
+\DoxyCodeLine{00203\ \textcolor{keywordtype}{void}\ dadd\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x63\ \ \ \ None}}
+\DoxyCodeLine{00204\ \textcolor{keywordtype}{void}\ isub\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x64\ \ \ \ None}}
+\DoxyCodeLine{00205\ \textcolor{keywordtype}{void}\ lsub\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x65\ \ \ \ None}}
+\DoxyCodeLine{00206\ \textcolor{keywordtype}{void}\ fsub\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x66\ \ \ \ None}}
+\DoxyCodeLine{00207\ \textcolor{keywordtype}{void}\ dsub\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x67\ \ \ \ None}}
+\DoxyCodeLine{00208\ \textcolor{keywordtype}{void}\ imul\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x68\ \ \ \ None}}
+\DoxyCodeLine{00209\ \textcolor{keywordtype}{void}\ lmul\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x69\ \ \ \ None}}
+\DoxyCodeLine{00210\ \textcolor{keywordtype}{void}\ fmul\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x6a\ \ \ \ None}}
+\DoxyCodeLine{00211\ \textcolor{keywordtype}{void}\ dmul\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x6b\ \ \ \ None}}
+\DoxyCodeLine{00212\ \textcolor{keywordtype}{void}\ idiv\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x6c\ \ \ \ None}}
+\DoxyCodeLine{00213\ \textcolor{keywordtype}{void}\ ldiv\_\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x6d\ \ \ \ None}}
+\DoxyCodeLine{00214\ \textcolor{keywordtype}{void}\ fdiv\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x6e\ \ \ \ None}}
+\DoxyCodeLine{00215\ \textcolor{keywordtype}{void}\ ddiv\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x6f\ \ \ \ None}}
+\DoxyCodeLine{00216\ \textcolor{keywordtype}{void}\ irem\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x70\ \ \ \ None}}
+\DoxyCodeLine{00217\ \textcolor{keywordtype}{void}\ lrem\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x71\ \ \ \ None}}
+\DoxyCodeLine{00218\ \textcolor{keywordtype}{void}\ frem\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x72\ \ \ \ None}}
+\DoxyCodeLine{00219\ \textcolor{keywordtype}{void}\ drem\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x73\ \ \ \ None}}
+\DoxyCodeLine{00220\ \textcolor{keywordtype}{void}\ ineg\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x74\ \ \ \ None}}
+\DoxyCodeLine{00221\ \textcolor{keywordtype}{void}\ lneg\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x75\ \ \ \ None}}
+\DoxyCodeLine{00222\ \textcolor{keywordtype}{void}\ fneg\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x76\ \ \ \ None}}
+\DoxyCodeLine{00223\ \textcolor{keywordtype}{void}\ dneg\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x77\ \ \ \ None}}
+\DoxyCodeLine{00224\ \textcolor{keywordtype}{void}\ ishl\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x78\ \ \ \ None}}
+\DoxyCodeLine{00225\ \textcolor{keywordtype}{void}\ lshl\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x79\ \ \ \ None}}
+\DoxyCodeLine{00226\ \textcolor{keywordtype}{void}\ ishr\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x7a\ \ \ \ None}}
+\DoxyCodeLine{00227\ \textcolor{keywordtype}{void}\ lshr\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x7b\ \ \ \ None}}
+\DoxyCodeLine{00228\ \textcolor{keywordtype}{void}\ iushr\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x7c\ \ \ \ None}}
+\DoxyCodeLine{00229\ \textcolor{keywordtype}{void}\ lushr\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x7d\ \ \ \ None}}
+\DoxyCodeLine{00230\ \textcolor{keywordtype}{void}\ iand\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x7e\ \ \ \ None}}
+\DoxyCodeLine{00231\ \textcolor{keywordtype}{void}\ land\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x7f\ \ \ \ None}}
+\DoxyCodeLine{00232\ \textcolor{keywordtype}{void}\ ior\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x80\ \ \ \ None}}
+\DoxyCodeLine{00233\ \textcolor{keywordtype}{void}\ lor\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x81\ \ \ \ None}}
+\DoxyCodeLine{00234\ \textcolor{keywordtype}{void}\ ixor\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x82\ \ \ \ None}}
+\DoxyCodeLine{00235\ \textcolor{keywordtype}{void}\ lxor\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x83\ \ \ \ None}}
+\DoxyCodeLine{00236\ \textcolor{keywordtype}{void}\ iinc\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x84\ \ \ \ Byte\ (index),\ Byte\ (constant)}}
+\DoxyCodeLine{00237\ \textcolor{keywordtype}{void}\ i2l\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x85\ \ \ \ None}}
+\DoxyCodeLine{00238\ \textcolor{keywordtype}{void}\ i2f\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x86\ \ \ \ None}}
+\DoxyCodeLine{00239\ \textcolor{keywordtype}{void}\ i2d\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x87\ \ \ \ None}}
+\DoxyCodeLine{00240\ \textcolor{keywordtype}{void}\ l2i\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x88\ \ \ \ None}}
+\DoxyCodeLine{00241\ \textcolor{keywordtype}{void}\ l2f\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x89\ \ \ \ None}}
+\DoxyCodeLine{00242\ \textcolor{keywordtype}{void}\ l2d\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x8a\ \ \ \ None}}
+\DoxyCodeLine{00243\ \textcolor{keywordtype}{void}\ f2i\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x8b\ \ \ \ None}}
+\DoxyCodeLine{00244\ \textcolor{keywordtype}{void}\ f2l\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x8c\ \ \ \ None}}
+\DoxyCodeLine{00245\ \textcolor{keywordtype}{void}\ f2d\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x8d\ \ \ \ None}}
+\DoxyCodeLine{00246\ \textcolor{keywordtype}{void}\ d2i\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x8e\ \ \ \ None}}
+\DoxyCodeLine{00247\ \textcolor{keywordtype}{void}\ d2l\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x8f\ \ \ \ None}}
+\DoxyCodeLine{00248\ \textcolor{keywordtype}{void}\ d2f\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x90\ \ \ \ None}}
+\DoxyCodeLine{00249\ \textcolor{keywordtype}{void}\ i2b\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x91\ \ \ \ None}}
+\DoxyCodeLine{00250\ \textcolor{keywordtype}{void}\ i2c\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x92\ \ \ \ None}}
+\DoxyCodeLine{00251\ \textcolor{keywordtype}{void}\ i2s\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x93\ \ \ \ None}}
+\DoxyCodeLine{00252\ \textcolor{keywordtype}{void}\ lcmp\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x94\ \ \ \ None}}
+\DoxyCodeLine{00253\ \textcolor{keywordtype}{void}\ fcmpl\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x95\ \ \ \ None}}
+\DoxyCodeLine{00254\ \textcolor{keywordtype}{void}\ fcmpg\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x96\ \ \ \ None}}
+\DoxyCodeLine{00255\ \textcolor{keywordtype}{void}\ dcmpl\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x97\ \ \ \ None}}
+\DoxyCodeLine{00256\ \textcolor{keywordtype}{void}\ dcmpg\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x98\ \ \ \ None}}
+\DoxyCodeLine{00257\ \textcolor{keywordtype}{void}\ ifeq\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x99\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00258\ \textcolor{keywordtype}{void}\ ifne\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x9a\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00259\ \textcolor{keywordtype}{void}\ iflt\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x9b\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00260\ \textcolor{keywordtype}{void}\ ifge\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x9c\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00261\ \textcolor{keywordtype}{void}\ ifgt\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x9d\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00262\ \textcolor{keywordtype}{void}\ ifle\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x9e\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00263\ \textcolor{keywordtype}{void}\ if\_icmpeq\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0x9f\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00264\ \textcolor{keywordtype}{void}\ if\_icmpne\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xa0\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00265\ \textcolor{keywordtype}{void}\ if\_icmplt\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xa1\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00266\ \textcolor{keywordtype}{void}\ if\_icmpge\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xa2\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00267\ \textcolor{keywordtype}{void}\ if\_icmpgt\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xa3\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00268\ \textcolor{keywordtype}{void}\ if\_icmple\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xa4\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00269\ \textcolor{keywordtype}{void}\ if\_acmpeq\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xa5\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00270\ \textcolor{keywordtype}{void}\ if\_acmpne\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xa6\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00271\ \textcolor{keywordtype}{void}\ goto\_\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xa7\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00272\ \textcolor{keywordtype}{void}\ jsr\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xa8\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00273\ \textcolor{keywordtype}{void}\ ret\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xa9\ \ \ \ Byte\ (local\ variable\ index)}}
+\DoxyCodeLine{00274\ \textcolor{keywordtype}{void}\ tableswitch\ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xaa\ \ \ \ Padding,\ int\ (default\ offset),\ int\ (low),\ int\ (high),\ int[]\ (jump\ offsets)}}
+\DoxyCodeLine{00275\ \textcolor{keywordtype}{void}\ lookupswitch\ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xab\ \ \ \ Padding,\ int\ (default\ offset),\ int\ (npairs),\ \{int,\ int\}[]\ (match-\/offset\ pairs)}}
+\DoxyCodeLine{00276\ \textcolor{keywordtype}{void}\ ireturn\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xac\ \ \ \ None}}
+\DoxyCodeLine{00277\ \textcolor{keywordtype}{void}\ lreturn\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xad\ \ \ \ None}}
+\DoxyCodeLine{00278\ \textcolor{keywordtype}{void}\ freturn\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xae\ \ \ \ None}}
+\DoxyCodeLine{00279\ \textcolor{keywordtype}{void}\ dreturn\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xaf\ \ \ \ None}}
+\DoxyCodeLine{00280\ \textcolor{keywordtype}{void}\ areturn\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xb0\ \ \ \ None}}
+\DoxyCodeLine{00281\ \textcolor{keywordtype}{void}\ return\_\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xb1\ \ \ \ None}}
+\DoxyCodeLine{00282\ \textcolor{keywordtype}{void}\ getstatic\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xb2\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00283\ \textcolor{keywordtype}{void}\ putstatic\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xb3\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00284\ \textcolor{keywordtype}{void}\ getfield\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xb4\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00285\ \textcolor{keywordtype}{void}\ putfield\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xb5\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00286\ \textcolor{keywordtype}{void}\ invokevirtual\ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xb6\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00287\ \textcolor{keywordtype}{void}\ invokespecial\ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xb7\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00288\ \textcolor{keywordtype}{void}\ invokestatic\ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xb8\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00289\ \textcolor{keywordtype}{void}\ invokeinterface\ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xb9\ \ \ \ Short\ (index\ to\ constant\ pool),\ Byte\ (count),\ Byte\ (0)}}
+\DoxyCodeLine{00290\ \textcolor{keywordtype}{void}\ invokedynamic\ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xba\ \ \ \ Short\ (index\ to\ constant\ pool),\ Byte\ (0),\ Byte\ (0)}}
+\DoxyCodeLine{00291\ \textcolor{keywordtype}{void}\ \textcolor{keyword}{new}\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xbb\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00292\ \textcolor{keywordtype}{void}\ newarray\ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xbc\ \ \ \ Byte\ (atype)}}
+\DoxyCodeLine{00293\ \textcolor{keywordtype}{void}\ anewarray\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xbd\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00294\ \textcolor{keywordtype}{void}\ arraylength\ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xbe\ \ \ \ None}}
+\DoxyCodeLine{00295\ \textcolor{keywordtype}{void}\ athrow\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xbf\ \ \ \ None}}
+\DoxyCodeLine{00296\ \textcolor{keywordtype}{void}\ checkcast\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xc0\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00297\ \textcolor{keywordtype}{void}\ instanceof\ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xc1\ \ \ \ Short\ (index\ to\ constant\ pool)}}
+\DoxyCodeLine{00298\ \textcolor{keywordtype}{void}\ monitorenter\ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xc2\ \ \ \ None}}
+\DoxyCodeLine{00299\ \textcolor{keywordtype}{void}\ monitorexit\ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xc3\ \ \ \ None}}
+\DoxyCodeLine{00300\ \textcolor{keywordtype}{void}\ wide\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xc4\ \ \ \ Byte\ (opcode),\ additional\ bytes\ depending\ on\ opcode}}
+\DoxyCodeLine{00301\ \textcolor{keywordtype}{void}\ multianewarray\ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xc5\ \ \ \ Short\ (index\ to\ constant\ pool),\ Byte\ (dimensions)}}
+\DoxyCodeLine{00302\ \textcolor{keywordtype}{void}\ ifnull\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xc6\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00303\ \textcolor{keywordtype}{void}\ ifnonnull\ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xc7\ \ \ \ Short\ (branch\ offset)}}
+\DoxyCodeLine{00304\ \textcolor{keywordtype}{void}\ goto\_w\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xc8\ \ \ \ Int\ (branch\ offset)}}
+\DoxyCodeLine{00305\ \textcolor{keywordtype}{void}\ jsr\_w\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xc9\ \ \ \ Int\ (branch\ offset)}}
+\DoxyCodeLine{00306\ \textcolor{keywordtype}{void}\ breakpoint\ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xca\ \ \ \ None\ (reserved\ for\ debuggers)}}
+\DoxyCodeLine{00307\ \textcolor{keywordtype}{void}\ impdep1\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xfe\ \ \ \ None\ (reserved\ for\ implementation-\/dependent\ operations)}}
+\DoxyCodeLine{00308\ \textcolor{keywordtype}{void}\ impdep2\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}*\ operands);\textcolor{comment}{//\ 0xff\ \ \ \ None\ (reserved\ for\ implementation-\/dependent\ operations)}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00311\ }
+
+\end{DoxyCode}

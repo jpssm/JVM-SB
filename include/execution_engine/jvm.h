@@ -1,46 +1,106 @@
+/**
+ * @file jvm.h
+ * @brief Declarações de estruturas e funções para o motor de execução da JVM.
+ */
+
 #ifndef EXECUTION_ENGINE_H
 #define EXECUTION_ENGINE_H
 
 #include <class_loader/bytes.h>
 #include <runtime_data/runtime_data.h>
 
-enum retrunType{I_RETURN, L_RETURN, F_RETURN, D_RETURN, A_RETURN, RETURN_};
+/**
+ * @enum retrunType
+ * @brief Tipos de retorno possíveis de um método.
+ */
+enum retrunType { I_RETURN, L_RETURN, F_RETURN, D_RETURN, A_RETURN, RETURN_ };
 
+/**
+ * @struct Value_32
+ * @brief Estrutura para valores de 32 bits.
+ */
 typedef struct {
-    u4 i;
-    float f;
-}Value_32;
+    u4 i;    /**< Inteiro de 32 bits. */
+    float f; /**< Float de 32 bits. */
+} Value_32;
 
+/**
+ * @struct Value_64
+ * @brief Estrutura para valores de 64 bits.
+ */
 typedef struct {
-    u8 l;
-    double d;
-}Value_64;
+    u8 l;     /**< Inteiro de 64 bits. */
+    double d; /**< Double de 64 bits. */
+} Value_64;
 
-typedef struct{
-    char was_a_call : 1;
-    char was_a_return : 1;
-    int method_info_index;
-    char return_type;
+/**
+ * @struct Control_flags
+ * @brief Estrutura para flags de controle.
+ */
+typedef struct {
+    char was_a_call : 1;   /**< Indica se foi uma chamada. */
+    char was_a_return : 1; /**< Indica se foi um retorno. */
+    int method_info_index; /**< Índice da informação do método. */
+    char return_type;      /**< Tipo de retorno. */
 } Control_flags;
 
-
-
+/**
+ * @brief Executa a JVM para a classe fornecida.
+ * 
+ * @param class Ponteiro para a estrutura ClassFile da classe a ser executada.
+ */
 void jvm(ClassFile * class);
 
+/**
+ * @brief Empilha um valor na pilha de execução.
+ * 
+ * @param n Valor a ser empilhado.
+ */
 void push(n);
 
+/**
+ * @brief Empilha um valor de 64 bits na pilha de execução.
+ * 
+ * @param frame Ponteiro para a estrutura Frame.
+ * @param n Valor de 64 bits a ser empilhado.
+ */
 void push_u8(Frame *frame, u8 n);
 
+/**
+ * @brief Desempilha um valor de 32 bits da pilha de execução.
+ * 
+ * @return Valor de 32 bits desempilhado.
+ */
 u4 pop_stack();
 
+/**
+ * @brief Desempilha um valor de 64 bits da pilha de execução.
+ * 
+ * @return Valor de 64 bits desempilhado.
+ */
 u8 pop_stack_u8();
 
+/**
+ * @brief Passa parâmetros de um frame para outro.
+ * 
+ * @param caller_frame Ponteiro para o frame chamador.
+ * @param called_frame Ponteiro para o frame chamado.
+ */
 void pass_parameters(Frame *caller_frame, Frame *called_frame);
 
+/**
+ * @brief Array de ponteiros para funções que interpretam instruções da JVM.
+ */
 extern void (*interpreter[256]) (u1*);
+
+/**
+ * @brief Array de strings com os nomes das instruções da JVM.
+ */
 extern char *intructions[256];
 
-//Instruction                  Hex  Operand Type
+/**
+ * @brief Define as funções que implementam as instruções da JVM.
+ */
 void nop             (u1* operands); // 0x00    None
 void aconst_null     (u1* operands);// 0x01    None
 void iconst_m1       (u1* operands);// 0x02    None

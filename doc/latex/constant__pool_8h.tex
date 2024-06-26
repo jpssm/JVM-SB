@@ -1,0 +1,144 @@
+\doxysection{include/class\+\_\+loader/constant\+\_\+pool.h File Reference}
+\hypertarget{constant__pool_8h}{}\label{constant__pool_8h}\index{include/class\_loader/constant\_pool.h@{include/class\_loader/constant\_pool.h}}
+
+
+Definições relacionadas à pool de constantes.  
+
+
+{\ttfamily \#include $<$class\+\_\+loader/bytes.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info\+\_\+struct}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um item da pool de constantes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{constant__pool_8h_a72b5b534aa409975da610a36f648fa0a}\label{constant__pool_8h_a72b5b534aa409975da610a36f648fa0a} 
+\#define {\bfseries CONSTANT\+\_\+\+Class}~7
+\item 
+\Hypertarget{constant__pool_8h_a008d43478c2e2973e7413f5d1c48095d}\label{constant__pool_8h_a008d43478c2e2973e7413f5d1c48095d} 
+\#define {\bfseries CONSTANT\+\_\+\+Fieldref}~9
+\item 
+\Hypertarget{constant__pool_8h_a2a179cf178ea867c6ab1700508c269dd}\label{constant__pool_8h_a2a179cf178ea867c6ab1700508c269dd} 
+\#define {\bfseries CONSTANT\+\_\+\+Methodref}~10
+\item 
+\Hypertarget{constant__pool_8h_ac0e92044d246c6e4d691116f89a70ebb}\label{constant__pool_8h_ac0e92044d246c6e4d691116f89a70ebb} 
+\#define {\bfseries CONSTANT\+\_\+\+Interface\+Methodref}~11
+\item 
+\Hypertarget{constant__pool_8h_a0a7acbe175de56072a2f0a1a051418e1}\label{constant__pool_8h_a0a7acbe175de56072a2f0a1a051418e1} 
+\#define {\bfseries CONSTANT\+\_\+\+String}~8
+\item 
+\Hypertarget{constant__pool_8h_a856a6553a55d721970ca5450eb1ccd2c}\label{constant__pool_8h_a856a6553a55d721970ca5450eb1ccd2c} 
+\#define {\bfseries CONSTANT\+\_\+\+Integer}~3
+\item 
+\Hypertarget{constant__pool_8h_ab914627ce5b25c4acfc98f2eacb78473}\label{constant__pool_8h_ab914627ce5b25c4acfc98f2eacb78473} 
+\#define {\bfseries CONSTANT\+\_\+\+Float}~4
+\item 
+\Hypertarget{constant__pool_8h_a426ca017b895fc522671a561d460be7a}\label{constant__pool_8h_a426ca017b895fc522671a561d460be7a} 
+\#define {\bfseries CONSTANT\+\_\+\+Long}~5
+\item 
+\Hypertarget{constant__pool_8h_ab49341c3b4ade4bfa1a64be8d2f73ae1}\label{constant__pool_8h_ab49341c3b4ade4bfa1a64be8d2f73ae1} 
+\#define {\bfseries CONSTANT\+\_\+\+Double}~6
+\item 
+\Hypertarget{constant__pool_8h_a5b6ba749976ae61415983ca0b890c91a}\label{constant__pool_8h_a5b6ba749976ae61415983ca0b890c91a} 
+\#define {\bfseries CONSTANT\+\_\+\+Name\+And\+Type}~12
+\item 
+\Hypertarget{constant__pool_8h_afc46559a7d3f7baf519fc183c2fad2b4}\label{constant__pool_8h_afc46559a7d3f7baf519fc183c2fad2b4} 
+\#define {\bfseries CONSTANT\+\_\+\+Utf8}~1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{constant__pool_8h_a2b42463003093ccbe0566012fdc2180e}\label{constant__pool_8h_a2b42463003093ccbe0566012fdc2180e} 
+typedef struct \mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info\+\_\+struct}} {\bfseries cp\+\_\+info}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{constant__pool_8h_a2337de3b70f8c88235e99356e92c9913}{create\+\_\+constant\+\_\+pool}} (FILE \texorpdfstring{$\ast$}{*}file, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} count)
+\begin{DoxyCompactList}\small\item\em Cria uma pool de constantes baseada em um arquivo e um contador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{constant__pool_8h_a14f2e261ef42caad280c54a628e26374}{destroy\+\_\+cp}} (\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}cp, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} count)
+\begin{DoxyCompactList}\small\item\em Libera memória do Pool de constantes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{constant__pool_8h_ade84835e2155469bf917fcdc4f0e5621}{get\+\_\+from\+\_\+cp}} (\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}constant\+Pool, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} count, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} index)
+\begin{DoxyCompactList}\small\item\em Imprime os itens da pool de constantes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definições relacionadas à pool de constantes. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{constant__pool_8h_a2337de3b70f8c88235e99356e92c9913}\index{constant\_pool.h@{constant\_pool.h}!create\_constant\_pool@{create\_constant\_pool}}
+\index{create\_constant\_pool@{create\_constant\_pool}!constant\_pool.h@{constant\_pool.h}}
+\doxysubsubsection{\texorpdfstring{create\_constant\_pool()}{create\_constant\_pool()}}
+{\footnotesize\ttfamily \label{constant__pool_8h_a2337de3b70f8c88235e99356e92c9913} 
+\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*} create\+\_\+constant\+\_\+pool (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Cria uma pool de constantes baseada em um arquivo e um contador. 
+
+Esta função lê a estrutura da pool de constantes de um arquivo binário e retorna um ponteiro para a pool de constantes criada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Um ponteiro para o arquivo binário a ser lido. \\
+\hline
+{\em count} & O número de elementos na pool de constantes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um ponteiro para a pool de constantes criada.
+\end{DoxyReturn}
+Cria uma pool de constantes baseada em um arquivo e um contador.
+
+Esta função lê a estrutura da pool de constantes de um arquivo binário e retorna um ponteiro para a pool de constantes criada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Um ponteiro para o arquivo binário a ser lido. \\
+\hline
+{\em count} & O número de elementos na pool de constantes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um ponteiro para a pool de constantes criada. 
+\end{DoxyReturn}
+\Hypertarget{constant__pool_8h_a14f2e261ef42caad280c54a628e26374}\index{constant\_pool.h@{constant\_pool.h}!destroy\_cp@{destroy\_cp}}
+\index{destroy\_cp@{destroy\_cp}!constant\_pool.h@{constant\_pool.h}}
+\doxysubsubsection{\texorpdfstring{destroy\_cp()}{destroy\_cp()}}
+{\footnotesize\ttfamily \label{constant__pool_8h_a14f2e261ef42caad280c54a628e26374} 
+void destroy\+\_\+cp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{cp}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Libera memória do Pool de constantes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & Um ponteiro para estrutura Constant Pool. \\
+\hline
+{\em count} & O número de elementos na pool de constantes. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{constant__pool_8h_ade84835e2155469bf917fcdc4f0e5621}\index{constant\_pool.h@{constant\_pool.h}!get\_from\_cp@{get\_from\_cp}}
+\index{get\_from\_cp@{get\_from\_cp}!constant\_pool.h@{constant\_pool.h}}
+\doxysubsubsection{\texorpdfstring{get\_from\_cp()}{get\_from\_cp()}}
+{\footnotesize\ttfamily \label{constant__pool_8h_ade84835e2155469bf917fcdc4f0e5621} 
+\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*} get\+\_\+from\+\_\+cp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{constant\+Pool}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{count}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Imprime os itens da pool de constantes. 
+
+Esta função imprime os itens da pool de constantes na saída padrão.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & Um ponteiro para a pool de constantes. \\
+\hline
+{\em count} & O número de itens na pool de constantes. \\
+\hline
+\end{DoxyParams}

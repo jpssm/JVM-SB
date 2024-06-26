@@ -10,7 +10,7 @@
 #include <class_loader/constant_pool.h>
 
 /**
- * @struct attribute_info_struct
+ * @struct attribute_info
  * @brief Estrutura para armazenar informações de atributos genéricos.
  */
 struct attribute_info_struct
@@ -21,7 +21,7 @@ struct attribute_info_struct
 } typedef attribute_info;
 
 /**
- * @struct exception_table_struct
+ * @struct exception_table
  * @brief Estrutura para armazenar informações da tabela de exceções.
  */
 struct exception_table_struct{
@@ -32,7 +32,7 @@ struct exception_table_struct{
 } typedef exception_table;
 
 /**
- * @struct code_attribute_struct
+ * @struct code_attribute
  * @brief Estrutura para armazenar informações de atributos de código.
  */
 struct code_attribute_struct{

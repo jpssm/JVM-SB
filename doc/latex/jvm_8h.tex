@@ -1,0 +1,769 @@
+\doxysection{include/execution\+\_\+engine/jvm.h File Reference}
+\hypertarget{jvm_8h}{}\label{jvm_8h}\index{include/execution\_engine/jvm.h@{include/execution\_engine/jvm.h}}
+
+
+Declarações de estruturas e funções para o motor de execução da JVM.  
+
+
+{\ttfamily \#include $<$class\+\_\+loader/bytes.\+h$>$}\newline
+{\ttfamily \#include $<$runtime\+\_\+data/runtime\+\_\+data.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_value__32}{Value\+\_\+32}}
+\begin{DoxyCompactList}\small\item\em Estrutura para valores de 32 bits. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_value__64}{Value\+\_\+64}}
+\begin{DoxyCompactList}\small\item\em Estrutura para valores de 64 bits. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_control__flags}{Control\+\_\+flags}}
+\begin{DoxyCompactList}\small\item\em Estrutura para flags de controle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{jvm_8h_ad26e0f8a064081204d6ce18264d89b43}\label{jvm_8h_ad26e0f8a064081204d6ce18264d89b43} 
+enum \mbox{\hyperlink{jvm_8h_ad26e0f8a064081204d6ce18264d89b43}{retrun\+Type}} \{ \newline
+{\bfseries I\+\_\+\+RETURN}
+, {\bfseries L\+\_\+\+RETURN}
+, {\bfseries F\+\_\+\+RETURN}
+, {\bfseries D\+\_\+\+RETURN}
+, \newline
+{\bfseries A\+\_\+\+RETURN}
+, {\bfseries RETURN\+\_\+}
+ \}
+\begin{DoxyCompactList}\small\item\em Tipos de retorno possíveis de um método. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{jvm_8h_a60de4c9f4ee4c5aaacfe23d18129971c}{jvm}} (\mbox{\hyperlink{structclass__file}{Class\+File}} \texorpdfstring{$\ast$}{*}class)
+\begin{DoxyCompactList}\small\item\em Executa a JVM para a classe fornecida. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{jvm_8h_a146810f695e1b6ed39d79d3ac0f4ade9}{push}} (n)
+\begin{DoxyCompactList}\small\item\em Empilha um valor na pilha de execução. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{jvm_8h_afcbc803892a5fe935e5c255729060823}{push\+\_\+u8}} (\mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*}frame, \mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}} n)
+\begin{DoxyCompactList}\small\item\em Empilha um valor de 64 bits na pilha de execução. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{jvm_8h_af32ab1b0f83f2aadbca0a50d600303ca}{pop\+\_\+stack}} ()
+\begin{DoxyCompactList}\small\item\em Desempilha um valor de 32 bits da pilha de execução. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}} \mbox{\hyperlink{jvm_8h_a779edc67026c5fbe70be6ed1f08d38ef}{pop\+\_\+stack\+\_\+u8}} ()
+\begin{DoxyCompactList}\small\item\em Desempilha um valor de 64 bits da pilha de execução. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{jvm_8h_aa5c735ed716f994213f000ed21699d9c}{pass\+\_\+parameters}} (\mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*}caller\+\_\+frame, \mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*}called\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Passa parâmetros de um frame para outro. \end{DoxyCompactList}\item 
+\Hypertarget{jvm_8h_a2adfbef19bab94b566098c5e1be103af}\label{jvm_8h_a2adfbef19bab94b566098c5e1be103af} 
+void {\bfseries nop} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\begin{DoxyCompactList}\small\item\em Define as funções que implementam as instruções da JVM. \end{DoxyCompactList}\item 
+\Hypertarget{jvm_8h_a479dd74ed4fda27e7b3b911d6e722c57}\label{jvm_8h_a479dd74ed4fda27e7b3b911d6e722c57} 
+void {\bfseries aconst\+\_\+null} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a82ecc04d593be8f117b1c19cb86e34d6}\label{jvm_8h_a82ecc04d593be8f117b1c19cb86e34d6} 
+void {\bfseries iconst\+\_\+m1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac9cd4858f454287e37584bd02f5cf2f4}\label{jvm_8h_ac9cd4858f454287e37584bd02f5cf2f4} 
+void {\bfseries iconst\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a89c2e510bdcec6fd6d4f287144f91f3d}\label{jvm_8h_a89c2e510bdcec6fd6d4f287144f91f3d} 
+void {\bfseries iconst\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a343ffafae6e1b86f04c3e2666d670c6e}\label{jvm_8h_a343ffafae6e1b86f04c3e2666d670c6e} 
+void {\bfseries iconst\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ab889b31b496303a74b882715ece15cdd}\label{jvm_8h_ab889b31b496303a74b882715ece15cdd} 
+void {\bfseries iconst\+\_\+3} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a50379d06f776d82757abbf5e4b6d9434}\label{jvm_8h_a50379d06f776d82757abbf5e4b6d9434} 
+void {\bfseries iconst\+\_\+4} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a8841ca9557b024c808a7b04e50bf526c}\label{jvm_8h_a8841ca9557b024c808a7b04e50bf526c} 
+void {\bfseries iconst\+\_\+5} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ae6d7977c8e279a1bf54f2d9e9681de7e}\label{jvm_8h_ae6d7977c8e279a1bf54f2d9e9681de7e} 
+void {\bfseries lconst\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a69a6c6f4f3e4cbc597f4b3648ef15b4c}\label{jvm_8h_a69a6c6f4f3e4cbc597f4b3648ef15b4c} 
+void {\bfseries lconst\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a2f58c26c13ac1c0c5b83666fbc105125}\label{jvm_8h_a2f58c26c13ac1c0c5b83666fbc105125} 
+void {\bfseries fconst\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a12687c6a83c61769e78e61782f0a800b}\label{jvm_8h_a12687c6a83c61769e78e61782f0a800b} 
+void {\bfseries fconst\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a083f0cb1cfae9c1789cadfbc2fc55c94}\label{jvm_8h_a083f0cb1cfae9c1789cadfbc2fc55c94} 
+void {\bfseries fconst\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a173ec299d4179398ccf3a77643fce74b}\label{jvm_8h_a173ec299d4179398ccf3a77643fce74b} 
+void {\bfseries dconst\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aedb5fb5177d554d7535dbeb1219e7bd0}\label{jvm_8h_aedb5fb5177d554d7535dbeb1219e7bd0} 
+void {\bfseries dconst\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_af19b9df13f1d3f92c46136d21ea7e49f}\label{jvm_8h_af19b9df13f1d3f92c46136d21ea7e49f} 
+void {\bfseries bipush} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_adf4d4f5f75b0107902bd775f76f974c0}\label{jvm_8h_adf4d4f5f75b0107902bd775f76f974c0} 
+void {\bfseries sipush} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a45746de6f68e3185e177aff47a23940f}\label{jvm_8h_a45746de6f68e3185e177aff47a23940f} 
+void {\bfseries ldc} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a63df738bd2106af44e9579dd78c192c9}\label{jvm_8h_a63df738bd2106af44e9579dd78c192c9} 
+void {\bfseries ldc\+\_\+w} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a71518e6b06a71b3365a92a8df9a06dfa}\label{jvm_8h_a71518e6b06a71b3365a92a8df9a06dfa} 
+void {\bfseries ldc2\+\_\+w} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a826403512d5236f2e3c496db22c7d946}\label{jvm_8h_a826403512d5236f2e3c496db22c7d946} 
+void {\bfseries iload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac7871984462d9cbc0cd54a340b3490d2}\label{jvm_8h_ac7871984462d9cbc0cd54a340b3490d2} 
+void {\bfseries lload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a83c344d03a880416f6aa48476367d36c}\label{jvm_8h_a83c344d03a880416f6aa48476367d36c} 
+void {\bfseries fload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ad245f1155e0a8480643d2c13790a0df4}\label{jvm_8h_ad245f1155e0a8480643d2c13790a0df4} 
+void {\bfseries dload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a932c3afc66f488d75244340236eb9278}\label{jvm_8h_a932c3afc66f488d75244340236eb9278} 
+void {\bfseries aload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_afbc103c80b6f2e9394124e8f6a2e6e3e}\label{jvm_8h_afbc103c80b6f2e9394124e8f6a2e6e3e} 
+void {\bfseries iload\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a181c92f2e8a55f56cb607a292090c391}\label{jvm_8h_a181c92f2e8a55f56cb607a292090c391} 
+void {\bfseries iload\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac55a87718145ac852c90c43f5af2bade}\label{jvm_8h_ac55a87718145ac852c90c43f5af2bade} 
+void {\bfseries iload\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_af6cc09ea956c16e64f3eb7a88f426757}\label{jvm_8h_af6cc09ea956c16e64f3eb7a88f426757} 
+void {\bfseries iload\+\_\+3} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_af695a203777aa4138cf7c280de8831a8}\label{jvm_8h_af695a203777aa4138cf7c280de8831a8} 
+void {\bfseries lload\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a018483b6dc9f0c4722bf7f8265ffc98d}\label{jvm_8h_a018483b6dc9f0c4722bf7f8265ffc98d} 
+void {\bfseries lload\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_adb63c21f5c2b29e8001807197765c045}\label{jvm_8h_adb63c21f5c2b29e8001807197765c045} 
+void {\bfseries lload\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a146e7e26f62b5ac6ab17990360841516}\label{jvm_8h_a146e7e26f62b5ac6ab17990360841516} 
+void {\bfseries lload\+\_\+3} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aeed85894c4312caab9db80a34f54a61a}\label{jvm_8h_aeed85894c4312caab9db80a34f54a61a} 
+void {\bfseries fload\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a14c2fa65dbd92eb1888f2b0080273556}\label{jvm_8h_a14c2fa65dbd92eb1888f2b0080273556} 
+void {\bfseries fload\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a95d3daaecd5f89ed6a0c41e4c83cdb44}\label{jvm_8h_a95d3daaecd5f89ed6a0c41e4c83cdb44} 
+void {\bfseries fload\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a1242129b167dd9c07c26b712da1d6ab8}\label{jvm_8h_a1242129b167dd9c07c26b712da1d6ab8} 
+void {\bfseries fload\+\_\+3} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_abf143e0288e54d9f21c3a3f113803abf}\label{jvm_8h_abf143e0288e54d9f21c3a3f113803abf} 
+void {\bfseries dload\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a8718440951dca87cde5af5fe04193eef}\label{jvm_8h_a8718440951dca87cde5af5fe04193eef} 
+void {\bfseries dload\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ab9f9729c3d5de35915545f9fed62c114}\label{jvm_8h_ab9f9729c3d5de35915545f9fed62c114} 
+void {\bfseries dload\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac882cb4e18f63fd976a45abed6c2394b}\label{jvm_8h_ac882cb4e18f63fd976a45abed6c2394b} 
+void {\bfseries dload\+\_\+3} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a3e865d0026938339bf294ba3a12b1952}\label{jvm_8h_a3e865d0026938339bf294ba3a12b1952} 
+void {\bfseries aload\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aa9e25583fb2bd7ee936bea9b41d8d6fb}\label{jvm_8h_aa9e25583fb2bd7ee936bea9b41d8d6fb} 
+void {\bfseries aload\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a2e2972f837f1e7a0ef8ae4163f07573c}\label{jvm_8h_a2e2972f837f1e7a0ef8ae4163f07573c} 
+void {\bfseries aload\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a706d84b47f4f9cdd72f83113e8c8bb82}\label{jvm_8h_a706d84b47f4f9cdd72f83113e8c8bb82} 
+void {\bfseries aload\+\_\+3} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ae7d8fa4e08bf9ba419b3f2d8f08e56d0}\label{jvm_8h_ae7d8fa4e08bf9ba419b3f2d8f08e56d0} 
+void {\bfseries iaload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a7c1828cf7d9c043f13f87685d3c1324f}\label{jvm_8h_a7c1828cf7d9c043f13f87685d3c1324f} 
+void {\bfseries laload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_afb3b3d69e5769e6f2932a9b2ef88b746}\label{jvm_8h_afb3b3d69e5769e6f2932a9b2ef88b746} 
+void {\bfseries faload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a2e5eda1fb1fd8488811a56233d2fc48d}\label{jvm_8h_a2e5eda1fb1fd8488811a56233d2fc48d} 
+void {\bfseries daload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ae0aafc7798284df72cdd2b392e88d634}\label{jvm_8h_ae0aafc7798284df72cdd2b392e88d634} 
+void {\bfseries aaload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a01f3f294b04219600e7d4b0ffd1e7b4a}\label{jvm_8h_a01f3f294b04219600e7d4b0ffd1e7b4a} 
+void {\bfseries baload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a99d18233a2e94b4bc29c496d706675c2}\label{jvm_8h_a99d18233a2e94b4bc29c496d706675c2} 
+void {\bfseries caload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a249f11543cf8e0c12c84f4701ac4ef70}\label{jvm_8h_a249f11543cf8e0c12c84f4701ac4ef70} 
+void {\bfseries saload} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a9d5b26caa663b4f8896adaec080978c8}\label{jvm_8h_a9d5b26caa663b4f8896adaec080978c8} 
+void {\bfseries istore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a1ccf65060d8f2cea19b262aa7e1364fb}\label{jvm_8h_a1ccf65060d8f2cea19b262aa7e1364fb} 
+void {\bfseries lstore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aa49c6462089fb2312844b6cd216df8db}\label{jvm_8h_aa49c6462089fb2312844b6cd216df8db} 
+void {\bfseries fstore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a101e668f1250dee7ca3f83c66107157a}\label{jvm_8h_a101e668f1250dee7ca3f83c66107157a} 
+void {\bfseries dstore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aa55d6e5988641b048847324d719ba216}\label{jvm_8h_aa55d6e5988641b048847324d719ba216} 
+void {\bfseries astore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a279e6af2c3ac7d7e14478336aed9ef19}\label{jvm_8h_a279e6af2c3ac7d7e14478336aed9ef19} 
+void {\bfseries istore\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a08d4251008973cde7cf4dc5df385ae3b}\label{jvm_8h_a08d4251008973cde7cf4dc5df385ae3b} 
+void {\bfseries istore\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a0b7b09ad8418c95f7830f1ac5a739a50}\label{jvm_8h_a0b7b09ad8418c95f7830f1ac5a739a50} 
+void {\bfseries istore\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a116f891a0dae8099cfa997686b41f12c}\label{jvm_8h_a116f891a0dae8099cfa997686b41f12c} 
+void {\bfseries istore\+\_\+3} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a448d4d0d88fb66107ca3634ece7212ad}\label{jvm_8h_a448d4d0d88fb66107ca3634ece7212ad} 
+void {\bfseries lstore\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a971bd547b4725d921338d1f4b1141da5}\label{jvm_8h_a971bd547b4725d921338d1f4b1141da5} 
+void {\bfseries lstore\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aafef676ea20343c9ace157637cba2a78}\label{jvm_8h_aafef676ea20343c9ace157637cba2a78} 
+void {\bfseries lstore\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aec13de9afe70504d7f1509cf69fa6413}\label{jvm_8h_aec13de9afe70504d7f1509cf69fa6413} 
+void {\bfseries lstore\+\_\+3} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ae220c474a1893c60871eccb7d24af209}\label{jvm_8h_ae220c474a1893c60871eccb7d24af209} 
+void {\bfseries fstore\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a90e3d591ca0f6df3f640368d2302b3a7}\label{jvm_8h_a90e3d591ca0f6df3f640368d2302b3a7} 
+void {\bfseries fstore\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a367e0e388a6bc4302e1d73e9764f8152}\label{jvm_8h_a367e0e388a6bc4302e1d73e9764f8152} 
+void {\bfseries fstore\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a451fc9bb7596404fa71a8cd4d2a8869f}\label{jvm_8h_a451fc9bb7596404fa71a8cd4d2a8869f} 
+void {\bfseries fstore\+\_\+3} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a2208b462d4fd0073ed2e9edceef1f710}\label{jvm_8h_a2208b462d4fd0073ed2e9edceef1f710} 
+void {\bfseries dstore\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a26054cf0ba4848b9405c6fd45c84bab2}\label{jvm_8h_a26054cf0ba4848b9405c6fd45c84bab2} 
+void {\bfseries dstore\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_afb46ee3b71c0b9d3f1c89c5e80717325}\label{jvm_8h_afb46ee3b71c0b9d3f1c89c5e80717325} 
+void {\bfseries dstore\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a7d88291c2d84732b4d7894e4d45856b3}\label{jvm_8h_a7d88291c2d84732b4d7894e4d45856b3} 
+void {\bfseries dstore\+\_\+3} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_adfcdb5fc979a0af7e0446c54fc8a580c}\label{jvm_8h_adfcdb5fc979a0af7e0446c54fc8a580c} 
+void {\bfseries astore\+\_\+0} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a33787246104438944497945976ad08af}\label{jvm_8h_a33787246104438944497945976ad08af} 
+void {\bfseries astore\+\_\+1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a0fcefcd1ea22eec679fdebc96b8adfb4}\label{jvm_8h_a0fcefcd1ea22eec679fdebc96b8adfb4} 
+void {\bfseries astore\+\_\+2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac5fbf9fe9f1c2a4edcb04a423a10c948}\label{jvm_8h_ac5fbf9fe9f1c2a4edcb04a423a10c948} 
+void {\bfseries astore\+\_\+3} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aaf76f89d4e65963682f8c62df41016b2}\label{jvm_8h_aaf76f89d4e65963682f8c62df41016b2} 
+void {\bfseries iastore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_acc91430f4826a0498cf71296eac8834f}\label{jvm_8h_acc91430f4826a0498cf71296eac8834f} 
+void {\bfseries lastore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_adbea6455a228ef62e378e98a3af1af3d}\label{jvm_8h_adbea6455a228ef62e378e98a3af1af3d} 
+void {\bfseries fastore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a0275a74d5ec8f614f18389e048704467}\label{jvm_8h_a0275a74d5ec8f614f18389e048704467} 
+void {\bfseries dastore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a503ad7e2898a84fd9213bbbc9adb5907}\label{jvm_8h_a503ad7e2898a84fd9213bbbc9adb5907} 
+void {\bfseries aastore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a4d43c1edc40f25d0bccdc8dd0924020e}\label{jvm_8h_a4d43c1edc40f25d0bccdc8dd0924020e} 
+void {\bfseries bastore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aae357ce2a2c728343f7943418c644a55}\label{jvm_8h_aae357ce2a2c728343f7943418c644a55} 
+void {\bfseries castore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_accfb72e2858fda44214d5cfc64cbd7ba}\label{jvm_8h_accfb72e2858fda44214d5cfc64cbd7ba} 
+void {\bfseries sastore} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_adb8aa1e5d050684e7230f7cebf2731cb}\label{jvm_8h_adb8aa1e5d050684e7230f7cebf2731cb} 
+void {\bfseries pop} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_afa1a134ac03e38f89fa90e76e1082225}\label{jvm_8h_afa1a134ac03e38f89fa90e76e1082225} 
+void {\bfseries pop2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a4138eaf06ff8d52345710d5ff0e8b702}\label{jvm_8h_a4138eaf06ff8d52345710d5ff0e8b702} 
+void {\bfseries dup} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a5e29059b3bb849661230d03c0aae9ea1}\label{jvm_8h_a5e29059b3bb849661230d03c0aae9ea1} 
+void {\bfseries dup\+\_\+x1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a6b8d6345ffc43812463137807a4ef1d9}\label{jvm_8h_a6b8d6345ffc43812463137807a4ef1d9} 
+void {\bfseries dup\+\_\+x2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_afb21e40e3ecd275b106c45077e9643c7}\label{jvm_8h_afb21e40e3ecd275b106c45077e9643c7} 
+void {\bfseries dup2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ad247d5c7461f176b7050fc4c355c936a}\label{jvm_8h_ad247d5c7461f176b7050fc4c355c936a} 
+void {\bfseries dup2\+\_\+x1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a7d4f32df5073f08bdffef3f2e6992a38}\label{jvm_8h_a7d4f32df5073f08bdffef3f2e6992a38} 
+void {\bfseries dup2\+\_\+x2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a48e1d9a3fd324fa7764cb77d3eaf333d}\label{jvm_8h_a48e1d9a3fd324fa7764cb77d3eaf333d} 
+void {\bfseries swap} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ad27578d6e9b303abbe17fc81fc69e157}\label{jvm_8h_ad27578d6e9b303abbe17fc81fc69e157} 
+void {\bfseries iadd} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aef5d3805f1cdd1f5c15f0c4062fb7f3b}\label{jvm_8h_aef5d3805f1cdd1f5c15f0c4062fb7f3b} 
+void {\bfseries ladd} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a144e03d830c651cbcbb3c26fe0610606}\label{jvm_8h_a144e03d830c651cbcbb3c26fe0610606} 
+void {\bfseries fadd} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac0f659964b27a70c5fffe952d369e6b3}\label{jvm_8h_ac0f659964b27a70c5fffe952d369e6b3} 
+void {\bfseries dadd} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a538d12beda7244b65ab027f216c3cffe}\label{jvm_8h_a538d12beda7244b65ab027f216c3cffe} 
+void {\bfseries isub} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a260047c0af22413db668945129322d60}\label{jvm_8h_a260047c0af22413db668945129322d60} 
+void {\bfseries lsub} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a6634ef0d382a2b8a79958276cd506e49}\label{jvm_8h_a6634ef0d382a2b8a79958276cd506e49} 
+void {\bfseries fsub} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a301e800a131933d31b0da15650524b07}\label{jvm_8h_a301e800a131933d31b0da15650524b07} 
+void {\bfseries dsub} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a7e3c85bb9cbb1dfe425e70aa4ddb0ac1}\label{jvm_8h_a7e3c85bb9cbb1dfe425e70aa4ddb0ac1} 
+void {\bfseries imul} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a99c42c3a00378286f5e6768a7b2f9e04}\label{jvm_8h_a99c42c3a00378286f5e6768a7b2f9e04} 
+void {\bfseries lmul} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ad9b01afeb282f4e267903a6c1cb86a16}\label{jvm_8h_ad9b01afeb282f4e267903a6c1cb86a16} 
+void {\bfseries fmul} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a6179c5509c06ee3f2b7353b6dc25ab39}\label{jvm_8h_a6179c5509c06ee3f2b7353b6dc25ab39} 
+void {\bfseries dmul} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a0c9c38d4a368c20e5835d6394cb3143b}\label{jvm_8h_a0c9c38d4a368c20e5835d6394cb3143b} 
+void {\bfseries idiv} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac482c21d06cb2e467c08ca415733b2d4}\label{jvm_8h_ac482c21d06cb2e467c08ca415733b2d4} 
+void {\bfseries ldiv\+\_\+} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aa2de37419332f6378847eb9c2c94cc1f}\label{jvm_8h_aa2de37419332f6378847eb9c2c94cc1f} 
+void {\bfseries fdiv} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a8443e75a2944d1d237d495585aabed83}\label{jvm_8h_a8443e75a2944d1d237d495585aabed83} 
+void {\bfseries ddiv} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a4ea87427dce68459935aef263c1a0dff}\label{jvm_8h_a4ea87427dce68459935aef263c1a0dff} 
+void {\bfseries irem} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a56d1663b0800e64e7bf472cbc11a7a8f}\label{jvm_8h_a56d1663b0800e64e7bf472cbc11a7a8f} 
+void {\bfseries lrem} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a752eccb89076e81e185e5a76b64c23cb}\label{jvm_8h_a752eccb89076e81e185e5a76b64c23cb} 
+void {\bfseries frem} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a7ba16b9f336e5083143db88ec7640b5c}\label{jvm_8h_a7ba16b9f336e5083143db88ec7640b5c} 
+void {\bfseries drem} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a982a65080208ccd9e3c6ae32c8062c66}\label{jvm_8h_a982a65080208ccd9e3c6ae32c8062c66} 
+void {\bfseries ineg} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aeda31535785554766de576a266a2ccc5}\label{jvm_8h_aeda31535785554766de576a266a2ccc5} 
+void {\bfseries lneg} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aa2d0ad882cbfee34e4268bc5e85952fa}\label{jvm_8h_aa2d0ad882cbfee34e4268bc5e85952fa} 
+void {\bfseries fneg} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac332397bfd20633120550c01459b2478}\label{jvm_8h_ac332397bfd20633120550c01459b2478} 
+void {\bfseries dneg} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a8d503c151cb255b143ee0df1d402678b}\label{jvm_8h_a8d503c151cb255b143ee0df1d402678b} 
+void {\bfseries ishl} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a9e547c64970039324c90f65e055c214d}\label{jvm_8h_a9e547c64970039324c90f65e055c214d} 
+void {\bfseries lshl} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a9e4fa457676fac4bb3a2a4407af1468a}\label{jvm_8h_a9e4fa457676fac4bb3a2a4407af1468a} 
+void {\bfseries ishr} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a855af0421ccaf4f6a9d04e5099b8b2da}\label{jvm_8h_a855af0421ccaf4f6a9d04e5099b8b2da} 
+void {\bfseries lshr} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a41a1b8cab8df741b10b843123f87bd03}\label{jvm_8h_a41a1b8cab8df741b10b843123f87bd03} 
+void {\bfseries iushr} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aff09186b6989a898604e9533a7fd1e68}\label{jvm_8h_aff09186b6989a898604e9533a7fd1e68} 
+void {\bfseries lushr} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a114bc0d762f9920c4c1b8f97feb954b4}\label{jvm_8h_a114bc0d762f9920c4c1b8f97feb954b4} 
+void {\bfseries iand} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a3fb8f20d79ef64a8aef8e57cd8e3c477}\label{jvm_8h_a3fb8f20d79ef64a8aef8e57cd8e3c477} 
+void {\bfseries land} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ad70b2404fc1fe72fd56ac611e3f3089a}\label{jvm_8h_ad70b2404fc1fe72fd56ac611e3f3089a} 
+void {\bfseries ior} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a8b6fafbb1e42f83c1e6dee5b8adb328b}\label{jvm_8h_a8b6fafbb1e42f83c1e6dee5b8adb328b} 
+void {\bfseries lor} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_acf8477d8dfcc7812390163b249780739}\label{jvm_8h_acf8477d8dfcc7812390163b249780739} 
+void {\bfseries ixor} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a911b4225d9d44dbb72e39f51270c85a2}\label{jvm_8h_a911b4225d9d44dbb72e39f51270c85a2} 
+void {\bfseries lxor} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a795f9060a98277d62a6b20426f25f44b}\label{jvm_8h_a795f9060a98277d62a6b20426f25f44b} 
+void {\bfseries iinc} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac494b7f2d70edccf350886186d894424}\label{jvm_8h_ac494b7f2d70edccf350886186d894424} 
+void {\bfseries i2l} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a21efe202a2e923a23bd7753838757211}\label{jvm_8h_a21efe202a2e923a23bd7753838757211} 
+void {\bfseries i2f} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a45c89bab662b9b98e0099a75ac1f3808}\label{jvm_8h_a45c89bab662b9b98e0099a75ac1f3808} 
+void {\bfseries i2d} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a12fc7027c18a59a187f58454af0c9375}\label{jvm_8h_a12fc7027c18a59a187f58454af0c9375} 
+void {\bfseries l2i} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a9c57011211f7ad0f1e4d041e8437110a}\label{jvm_8h_a9c57011211f7ad0f1e4d041e8437110a} 
+void {\bfseries l2f} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a679ba8584222720796ee0070f623c6f1}\label{jvm_8h_a679ba8584222720796ee0070f623c6f1} 
+void {\bfseries l2d} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a311453704884e783528b93e80adc244e}\label{jvm_8h_a311453704884e783528b93e80adc244e} 
+void {\bfseries f2i} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a610b7bc573488fdd58ffe80f6881fe14}\label{jvm_8h_a610b7bc573488fdd58ffe80f6881fe14} 
+void {\bfseries f2l} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ada6914d04ff9120aba6fd6bf726f9891}\label{jvm_8h_ada6914d04ff9120aba6fd6bf726f9891} 
+void {\bfseries f2d} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a5c6cba6f5026c841ba6d5a87cbe2fd58}\label{jvm_8h_a5c6cba6f5026c841ba6d5a87cbe2fd58} 
+void {\bfseries d2i} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a9804e2eeffa10790f893bb70a704a202}\label{jvm_8h_a9804e2eeffa10790f893bb70a704a202} 
+void {\bfseries d2l} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ae0c9693bb59d3e8b68b31ce58e496f2d}\label{jvm_8h_ae0c9693bb59d3e8b68b31ce58e496f2d} 
+void {\bfseries d2f} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a5d687c21f0d6b178a97bbaf3d64b58ca}\label{jvm_8h_a5d687c21f0d6b178a97bbaf3d64b58ca} 
+void {\bfseries i2b} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_abfaedc3c1b3cd6c31b08d13d53ebc179}\label{jvm_8h_abfaedc3c1b3cd6c31b08d13d53ebc179} 
+void {\bfseries i2c} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a9a34e3fb752a89a06df64eab929e5236}\label{jvm_8h_a9a34e3fb752a89a06df64eab929e5236} 
+void {\bfseries i2s} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a0ad53766012b3e7b4a3970a903400ad4}\label{jvm_8h_a0ad53766012b3e7b4a3970a903400ad4} 
+void {\bfseries lcmp} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aceee1c809317ce198ff8d4faee4f0e5c}\label{jvm_8h_aceee1c809317ce198ff8d4faee4f0e5c} 
+void {\bfseries fcmpl} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a1b7357a9370489dd8182aa9165167888}\label{jvm_8h_a1b7357a9370489dd8182aa9165167888} 
+void {\bfseries fcmpg} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a3d3a05538a8f1b451836a0ffc33721f2}\label{jvm_8h_a3d3a05538a8f1b451836a0ffc33721f2} 
+void {\bfseries dcmpl} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_adf577e09eb467e5257e3f57ec574978e}\label{jvm_8h_adf577e09eb467e5257e3f57ec574978e} 
+void {\bfseries dcmpg} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ad06ff824fb5460a5259819162f4f4138}\label{jvm_8h_ad06ff824fb5460a5259819162f4f4138} 
+void {\bfseries ifeq} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aa90c78be555d5a949cd65ee948d36436}\label{jvm_8h_aa90c78be555d5a949cd65ee948d36436} 
+void {\bfseries ifne} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aa84e14e4f4c627a765d8e0e98adffb4b}\label{jvm_8h_aa84e14e4f4c627a765d8e0e98adffb4b} 
+void {\bfseries iflt} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a8d46356598f3beb709a73fd82355c719}\label{jvm_8h_a8d46356598f3beb709a73fd82355c719} 
+void {\bfseries ifge} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a7c65ee788cfb973e46ad9a77d46b81a3}\label{jvm_8h_a7c65ee788cfb973e46ad9a77d46b81a3} 
+void {\bfseries ifgt} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a36f8c5f328ec6372c1f13d4ca42bfd85}\label{jvm_8h_a36f8c5f328ec6372c1f13d4ca42bfd85} 
+void {\bfseries ifle} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a7f071ab36f307c6f9a2e0fb2b5bebba6}\label{jvm_8h_a7f071ab36f307c6f9a2e0fb2b5bebba6} 
+void {\bfseries if\+\_\+icmpeq} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ad55754597ae08f05cc6321faff8532e4}\label{jvm_8h_ad55754597ae08f05cc6321faff8532e4} 
+void {\bfseries if\+\_\+icmpne} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aacddbbf2fd6c24cf4dfaf36942e4bc7c}\label{jvm_8h_aacddbbf2fd6c24cf4dfaf36942e4bc7c} 
+void {\bfseries if\+\_\+icmplt} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a282ace7a1eaadb0ad0a6dff5773bba54}\label{jvm_8h_a282ace7a1eaadb0ad0a6dff5773bba54} 
+void {\bfseries if\+\_\+icmpge} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a8bc28a3dbbd1e2a7a6f2b38c1ff8ee68}\label{jvm_8h_a8bc28a3dbbd1e2a7a6f2b38c1ff8ee68} 
+void {\bfseries if\+\_\+icmpgt} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac8c79b89780535b9573b2be78d7b5427}\label{jvm_8h_ac8c79b89780535b9573b2be78d7b5427} 
+void {\bfseries if\+\_\+icmple} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a55e143ef23c7ea65d5deabb14f758835}\label{jvm_8h_a55e143ef23c7ea65d5deabb14f758835} 
+void {\bfseries if\+\_\+acmpeq} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a9e5e02b40e5c5527d90dfdc8cd261e64}\label{jvm_8h_a9e5e02b40e5c5527d90dfdc8cd261e64} 
+void {\bfseries if\+\_\+acmpne} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a9a21a1203b8757e0ba887782bdb79ae0}\label{jvm_8h_a9a21a1203b8757e0ba887782bdb79ae0} 
+void {\bfseries goto\+\_\+} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aba7cdf0c8898376c4920f4386259e5db}\label{jvm_8h_aba7cdf0c8898376c4920f4386259e5db} 
+void {\bfseries jsr} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac51a64c722a3659c95b0363e54e20ecf}\label{jvm_8h_ac51a64c722a3659c95b0363e54e20ecf} 
+void {\bfseries ret} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a691d9296d664a58a0436462c83262041}\label{jvm_8h_a691d9296d664a58a0436462c83262041} 
+void {\bfseries tableswitch} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aac500932d0c315a28b32e83cf52ca9f7}\label{jvm_8h_aac500932d0c315a28b32e83cf52ca9f7} 
+void {\bfseries lookupswitch} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac536a4b2277d82a316ba3512483bf5b5}\label{jvm_8h_ac536a4b2277d82a316ba3512483bf5b5} 
+void {\bfseries ireturn} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a779f16a929d686ba90852e20ab49bedd}\label{jvm_8h_a779f16a929d686ba90852e20ab49bedd} 
+void {\bfseries lreturn} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a691523b462c686d05eace9288136ca0e}\label{jvm_8h_a691523b462c686d05eace9288136ca0e} 
+void {\bfseries freturn} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a6d4e8a163bd0f86ce19df0cf3ca65b80}\label{jvm_8h_a6d4e8a163bd0f86ce19df0cf3ca65b80} 
+void {\bfseries dreturn} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a06d7c87a68cc3d730512e2a5405a573f}\label{jvm_8h_a06d7c87a68cc3d730512e2a5405a573f} 
+void {\bfseries areturn} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a94723d9d920959a3a16664e78c3be426}\label{jvm_8h_a94723d9d920959a3a16664e78c3be426} 
+void {\bfseries return\+\_\+} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a9cbcd5b07193cd24d60d91f445df6a29}\label{jvm_8h_a9cbcd5b07193cd24d60d91f445df6a29} 
+void {\bfseries getstatic} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a1f72f55e53eebec6490397b7543880b4}\label{jvm_8h_a1f72f55e53eebec6490397b7543880b4} 
+void {\bfseries putstatic} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a03bbdcebcba907dcb04ff57a99e4c972}\label{jvm_8h_a03bbdcebcba907dcb04ff57a99e4c972} 
+void {\bfseries getfield} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a947acf87f26e6cdfc3997d00371c9293}\label{jvm_8h_a947acf87f26e6cdfc3997d00371c9293} 
+void {\bfseries putfield} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ad51c174dc47293c859a93dc870ba2af0}\label{jvm_8h_ad51c174dc47293c859a93dc870ba2af0} 
+void {\bfseries invokevirtual} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac0d3b604c386839d52d43f9f07a1ac5b}\label{jvm_8h_ac0d3b604c386839d52d43f9f07a1ac5b} 
+void {\bfseries invokespecial} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a074cf60e7088c6c2d2bf31f5da984ecc}\label{jvm_8h_a074cf60e7088c6c2d2bf31f5da984ecc} 
+void {\bfseries invokestatic} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a78266c22ffc5e99d6518bbdbff898508}\label{jvm_8h_a78266c22ffc5e99d6518bbdbff898508} 
+void {\bfseries invokeinterface} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a6674d33a315164381ed6f69a0c731b42}\label{jvm_8h_a6674d33a315164381ed6f69a0c731b42} 
+void {\bfseries invokedynamic} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a4240db724c47d98d32e3a470ff45e1be}\label{jvm_8h_a4240db724c47d98d32e3a470ff45e1be} 
+void {\bfseries new} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a4a1765cced74deef4f9b8722f3a6ef30}\label{jvm_8h_a4a1765cced74deef4f9b8722f3a6ef30} 
+void {\bfseries newarray} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_aaeb9fc366467bc72bb8b4d20fe972498}\label{jvm_8h_aaeb9fc366467bc72bb8b4d20fe972498} 
+void {\bfseries anewarray} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a517d68a9e15e684dfdfc1a0ec02f5c4d}\label{jvm_8h_a517d68a9e15e684dfdfc1a0ec02f5c4d} 
+void {\bfseries arraylength} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a63e9afafac7a6a9b4b3f9fc6651d5f22}\label{jvm_8h_a63e9afafac7a6a9b4b3f9fc6651d5f22} 
+void {\bfseries athrow} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ad712fa5439de4fa7e82831754e09b576}\label{jvm_8h_ad712fa5439de4fa7e82831754e09b576} 
+void {\bfseries checkcast} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ac81cd467dd5a3b94d9d5e920a7ff0500}\label{jvm_8h_ac81cd467dd5a3b94d9d5e920a7ff0500} 
+void {\bfseries instanceof} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_ad6cf11213b86845e7bf4c5ae7b0b41c8}\label{jvm_8h_ad6cf11213b86845e7bf4c5ae7b0b41c8} 
+void {\bfseries monitorenter} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a0d9dc19a1d7452ea788ea9f41092a3ce}\label{jvm_8h_a0d9dc19a1d7452ea788ea9f41092a3ce} 
+void {\bfseries monitorexit} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_af32800e446195c342a7c3146fe28164a}\label{jvm_8h_af32800e446195c342a7c3146fe28164a} 
+void {\bfseries wide} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_afe785b0b850f4fcc9ca437fcf8a936ec}\label{jvm_8h_afe785b0b850f4fcc9ca437fcf8a936ec} 
+void {\bfseries multianewarray} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a8cee60591d3c5810a19e5b6ef274cf26}\label{jvm_8h_a8cee60591d3c5810a19e5b6ef274cf26} 
+void {\bfseries ifnull} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a2abd6b4e1ac61af5f5201b2cba06546e}\label{jvm_8h_a2abd6b4e1ac61af5f5201b2cba06546e} 
+void {\bfseries ifnonnull} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a48ee44a92596a74568e2fdfb1b61c5ef}\label{jvm_8h_a48ee44a92596a74568e2fdfb1b61c5ef} 
+void {\bfseries goto\+\_\+w} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a069b4e44c75ed7a77c3d68b64cf55537}\label{jvm_8h_a069b4e44c75ed7a77c3d68b64cf55537} 
+void {\bfseries jsr\+\_\+w} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a2d20bc4661a3f2fef29a192b4b92ab22}\label{jvm_8h_a2d20bc4661a3f2fef29a192b4b92ab22} 
+void {\bfseries breakpoint} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a521e8d459b2365163250928c68c29fd5}\label{jvm_8h_a521e8d459b2365163250928c68c29fd5} 
+void {\bfseries impdep1} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\item 
+\Hypertarget{jvm_8h_a56930b1ef6384713b0a663939c6c1b39}\label{jvm_8h_a56930b1ef6384713b0a663939c6c1b39} 
+void {\bfseries impdep2} (\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*}operands)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{jvm_8h_a37a387deb1d534aa31a560f13f0eb9e8}\label{jvm_8h_a37a387deb1d534aa31a560f13f0eb9e8} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries interpreter} \mbox{[}256\mbox{]})(\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_array}{Array} de ponteiros para funções que interpretam instruções da JVM. \end{DoxyCompactList}\item 
+\Hypertarget{jvm_8h_a56315e41c65c5229c7ba211a747475c0}\label{jvm_8h_a56315e41c65c5229c7ba211a747475c0} 
+char \texorpdfstring{$\ast$}{*} {\bfseries intructions} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_array}{Array} de strings com os nomes das instruções da JVM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declarações de estruturas e funções para o motor de execução da JVM. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{jvm_8h_a60de4c9f4ee4c5aaacfe23d18129971c}\index{jvm.h@{jvm.h}!jvm@{jvm}}
+\index{jvm@{jvm}!jvm.h@{jvm.h}}
+\doxysubsubsection{\texorpdfstring{jvm()}{jvm()}}
+{\footnotesize\ttfamily \label{jvm_8h_a60de4c9f4ee4c5aaacfe23d18129971c} 
+void jvm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structclass__file}{Class\+File}} \texorpdfstring{$\ast$}{*}}]{class}{}\end{DoxyParamCaption})}
+
+
+
+Executa a JVM para a classe fornecida. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class} & Ponteiro para a estrutura Class\+File da classe a ser executada. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{jvm_8h_aa5c735ed716f994213f000ed21699d9c}\index{jvm.h@{jvm.h}!pass\_parameters@{pass\_parameters}}
+\index{pass\_parameters@{pass\_parameters}!jvm.h@{jvm.h}}
+\doxysubsubsection{\texorpdfstring{pass\_parameters()}{pass\_parameters()}}
+{\footnotesize\ttfamily \label{jvm_8h_aa5c735ed716f994213f000ed21699d9c} 
+void pass\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*}}]{caller\+\_\+frame}{, }\item[{\mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*}}]{called\+\_\+frame}{}\end{DoxyParamCaption})}
+
+
+
+Passa parâmetros de um frame para outro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caller\+\_\+frame} & Ponteiro para o frame chamador. \\
+\hline
+{\em called\+\_\+frame} & Ponteiro para o frame chamado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{jvm_8h_af32ab1b0f83f2aadbca0a50d600303ca}\index{jvm.h@{jvm.h}!pop\_stack@{pop\_stack}}
+\index{pop\_stack@{pop\_stack}!jvm.h@{jvm.h}}
+\doxysubsubsection{\texorpdfstring{pop\_stack()}{pop\_stack()}}
+{\footnotesize\ttfamily \label{jvm_8h_af32ab1b0f83f2aadbca0a50d600303ca} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} pop\+\_\+stack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Desempilha um valor de 32 bits da pilha de execução. 
+
+\begin{DoxyReturn}{Returns}
+Valor de 32 bits desempilhado. 
+\end{DoxyReturn}
+\Hypertarget{jvm_8h_a779edc67026c5fbe70be6ed1f08d38ef}\index{jvm.h@{jvm.h}!pop\_stack\_u8@{pop\_stack\_u8}}
+\index{pop\_stack\_u8@{pop\_stack\_u8}!jvm.h@{jvm.h}}
+\doxysubsubsection{\texorpdfstring{pop\_stack\_u8()}{pop\_stack\_u8()}}
+{\footnotesize\ttfamily \label{jvm_8h_a779edc67026c5fbe70be6ed1f08d38ef} 
+\mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}} pop\+\_\+stack\+\_\+u8 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Desempilha um valor de 64 bits da pilha de execução. 
+
+\begin{DoxyReturn}{Returns}
+Valor de 64 bits desempilhado. 
+\end{DoxyReturn}
+\Hypertarget{jvm_8h_a146810f695e1b6ed39d79d3ac0f4ade9}\index{jvm.h@{jvm.h}!push@{push}}
+\index{push@{push}!jvm.h@{jvm.h}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily \label{jvm_8h_a146810f695e1b6ed39d79d3ac0f4ade9} 
+void push (\begin{DoxyParamCaption}\item[{n}]{}{}\end{DoxyParamCaption})}
+
+
+
+Empilha um valor na pilha de execução. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Valor a ser empilhado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{jvm_8h_afcbc803892a5fe935e5c255729060823}\index{jvm.h@{jvm.h}!push\_u8@{push\_u8}}
+\index{push\_u8@{push\_u8}!jvm.h@{jvm.h}}
+\doxysubsubsection{\texorpdfstring{push\_u8()}{push\_u8()}}
+{\footnotesize\ttfamily \label{jvm_8h_afcbc803892a5fe935e5c255729060823} 
+void push\+\_\+u8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*}}]{frame}{, }\item[{\mbox{\hyperlink{bytes_8h_ae4d1c3d548028e31400378ec81026110}{u8}}}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Empilha um valor de 64 bits na pilha de execução. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & Ponteiro para a estrutura \doxylink{struct_frame}{Frame}. \\
+\hline
+{\em n} & Valor de 64 bits a ser empilhado. \\
+\hline
+\end{DoxyParams}

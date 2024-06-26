@@ -44,6 +44,19 @@ typedef struct class_file
  */
 ClassFile *create_classfile(FILE *file);
 
+
+
+/**
+ * @brief Libera memória de uma estrutura Classfile.
+ * 
+ * @param cf Ponteiro para a estrutura Classfile alocada.
+
+ */
+void destroy_classfile(ClassFile* cf);
+
+
+
+
 /**
  * @brief Obtém o nome de um método a partir do pool de constantes.
  * 

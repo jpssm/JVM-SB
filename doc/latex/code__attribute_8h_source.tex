@@ -1,0 +1,33 @@
+\doxysection{code\+\_\+attribute.\+h}
+\hypertarget{code__attribute_8h_source}{}\label{code__attribute_8h_source}\index{include/class\_loader/code\_attribute.h@{include/class\_loader/code\_attribute.h}}
+\mbox{\hyperlink{code__attribute_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CODE\_ATTRIBUTE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CODE\_ATTRIBUTE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bytes_8h}{class\_loader/bytes.h}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{field_8h}{class\_loader/field.h}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{method_8h}{class\_loader/method.h}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{constant__pool_8h}{class\_loader/constant\_pool.h}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class__file_8h}{class\_loader/class\_file.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcode__attribute__struct}{code\_attribute\_struct}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structcode__attribute__struct_aa606f221fd97d91ccd26035d05d59219}{attribute\_name\_index}};\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{structcode__attribute__struct_a302ff5f51ad2746cbdad20abfcad239e}{attribute\_length}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structcode__attribute__struct_ae09380f6534f610325b0b2a9e2eb8650}{max\_stack}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structcode__attribute__struct_a2aca0632cd2cb414103ee41b9df8c998}{max\_locals}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{structcode__attribute__struct_a01030f4969a1ecbe7e932ab83b42526a}{code\_length}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}\ *\mbox{\hyperlink{structcode__attribute__struct_a4b8cdc24b778ca569783c8c54daa8c0c}{code}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structcode__attribute__struct_aecc3a84d54d5e23f1e86da5906fa2259}{exception\_table\_length}};\ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ *\mbox{\hyperlink{structcode__attribute__struct_a835f427d305bed8c23f024261e7324d9}{exception\_table}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structcode__attribute__struct_a052dc53d185071647a1818ff518429cf}{attributes\_count}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}\ *\mbox{\hyperlink{structcode__attribute__struct_a2d31701771e35d465d164d5a5db795ff}{attributes}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \}\ \mbox{\hyperlink{structcode__attribute}{code\_attribute}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \mbox{\hyperlink{structcode__attribute}{code\_attribute}}*\ \mbox{\hyperlink{code__attribute_8h_a5982c3f96b2466658c08c48eab6978b2}{create\_code\_attribute}}(FILE\ *file);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CODE\_ATTRIBUTE\_H}}
+
+\end{DoxyCode}

@@ -85,7 +85,25 @@ cp_info *create_constant_pool(FILE *file, u2 count)
     return constantPool;
 }
 
+void destroy_cp(cp_info *constantPool, u2 count)
+{
+    cp_info *cp;
 
+    // Itera sobre cada elemento da pool de constantes para liberar as strings
+    for (cp = constantPool; cp < constantPool + count - 1; cp++)
+    {
+        // Lê o tipo de tag do elemento
+        switch (cp->tag)
+        {
+        case CONSTANT_Utf8:
+            free(cp->info.Utf8.bytes);
+            break;
+        default:
+            break;
+        }
+    }
+    free(constantPool);
+}
 cp_info *get_from_cp(cp_info *constantPool, u2 count, u2 index)
 {
     // retorna cp_info do pool de constantes de acordo com o index;

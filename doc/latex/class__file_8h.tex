@@ -1,0 +1,155 @@
+\doxysection{include/class\+\_\+loader/class\+\_\+file.h File Reference}
+\hypertarget{class__file_8h}{}\label{class__file_8h}\index{include/class\_loader/class\_file.h@{include/class\_loader/class\_file.h}}
+
+
+Módulo responsável pelas estruturas e funções para manipulação do Class\+File.  
+
+
+{\ttfamily \#include $<$class\+\_\+loader/bytes.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/attribute.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/field.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/method.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/constant\+\_\+pool.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structclass__file}{class\+\_\+file}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um arquivo de classe Java. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class__file_8h_a3f45728fd3d0d28818d29cc5e74faebd}\label{class__file_8h_a3f45728fd3d0d28818d29cc5e74faebd} 
+typedef struct \mbox{\hyperlink{structclass__file}{class\+\_\+file}} {\bfseries Class\+File}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structclass__file}{Class\+File}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class__file_8h_a824c47f6a4c1fdead30d9e4e72cd892d}{create\+\_\+classfile}} (FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Cria uma estrutura Class\+File a partir de um arquivo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class__file_8h_ae5e87c054a511556a791fd23f9885263}{destroy\+\_\+classfile}} (\mbox{\hyperlink{structclass__file}{Class\+File}} \texorpdfstring{$\ast$}{*}cf)
+\begin{DoxyCompactList}\small\item\em Libera memória de uma estrutura Classfile. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class__file_8h_aad276fa026f0537d2628a93dcb49f7a5}{get\+\_\+method\+\_\+name}} (\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} count, \mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}constant\+\_\+pool, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} Methodref\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Obtém o nome de um método a partir do pool de constantes. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class__file_8h_a9bb081fad3f81147ab3ef3cae0749353}{get\+\_\+method\+\_\+descriptor}} (\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} count, \mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}constant\+\_\+pool, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} Methodref\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Obtém o descritor de um método a partir do pool de constantes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structmethod__info__struct}{method\+\_\+info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class__file_8h_a1bdf5917540bbdab50ed3e3a3ec4515d}{get\+\_\+method\+\_\+info}} (\mbox{\hyperlink{structclass__file}{Class\+File}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structclass__file}{class\+\_\+file}}, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} count, \mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}constant\+\_\+pool, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} Methodref\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Obtém as informações de um método específico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Módulo responsável pelas estruturas e funções para manipulação do Class\+File. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{class__file_8h_a824c47f6a4c1fdead30d9e4e72cd892d}\index{class\_file.h@{class\_file.h}!create\_classfile@{create\_classfile}}
+\index{create\_classfile@{create\_classfile}!class\_file.h@{class\_file.h}}
+\doxysubsubsection{\texorpdfstring{create\_classfile()}{create\_classfile()}}
+{\footnotesize\ttfamily \label{class__file_8h_a824c47f6a4c1fdead30d9e4e72cd892d} 
+\mbox{\hyperlink{structclass__file}{Class\+File}} \texorpdfstring{$\ast$}{*} create\+\_\+classfile (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Cria uma estrutura Class\+File a partir de um arquivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Ponteiro para o arquivo que contém os dados do arquivo de classe. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para a estrutura Class\+File criada.
+\end{DoxyReturn}
+Cria uma estrutura Class\+File baseada em um arquivo.
+
+Esta função aloca memória para uma estrutura Class\+File e preenche seus campos com base nos dados lidos do arquivo. 
+\begin{DoxyParams}{Parameters}
+{\em file} & Um ponteiro para o arquivo binário a ser lido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um ponteiro para a estrutura Class\+File preenchida. 
+\end{DoxyReturn}
+\Hypertarget{class__file_8h_ae5e87c054a511556a791fd23f9885263}\index{class\_file.h@{class\_file.h}!destroy\_classfile@{destroy\_classfile}}
+\index{destroy\_classfile@{destroy\_classfile}!class\_file.h@{class\_file.h}}
+\doxysubsubsection{\texorpdfstring{destroy\_classfile()}{destroy\_classfile()}}
+{\footnotesize\ttfamily \label{class__file_8h_ae5e87c054a511556a791fd23f9885263} 
+void destroy\+\_\+classfile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structclass__file}{Class\+File}} \texorpdfstring{$\ast$}{*}}]{cf}{}\end{DoxyParamCaption})}
+
+
+
+Libera memória de uma estrutura Classfile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cf} & Ponteiro para a estrutura Classfile alocada. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class__file_8h_a9bb081fad3f81147ab3ef3cae0749353}\index{class\_file.h@{class\_file.h}!get\_method\_descriptor@{get\_method\_descriptor}}
+\index{get\_method\_descriptor@{get\_method\_descriptor}!class\_file.h@{class\_file.h}}
+\doxysubsubsection{\texorpdfstring{get\_method\_descriptor()}{get\_method\_descriptor()}}
+{\footnotesize\ttfamily \label{class__file_8h_a9bb081fad3f81147ab3ef3cae0749353} 
+char \texorpdfstring{$\ast$}{*} get\+\_\+method\+\_\+descriptor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{count}{, }\item[{\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{constant\+\_\+pool}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{Methodref\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Obtém o descritor de um método a partir do pool de constantes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & Número de entradas no pool de constantes. \\
+\hline
+{\em constant\+\_\+pool} & Ponteiro para o pool de constantes. \\
+\hline
+{\em Methodref\+\_\+index} & Índice no pool de constantes que aponta para a referência do método. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para uma string contendo o descritor do método. 
+\end{DoxyReturn}
+\Hypertarget{class__file_8h_a1bdf5917540bbdab50ed3e3a3ec4515d}\index{class\_file.h@{class\_file.h}!get\_method\_info@{get\_method\_info}}
+\index{get\_method\_info@{get\_method\_info}!class\_file.h@{class\_file.h}}
+\doxysubsubsection{\texorpdfstring{get\_method\_info()}{get\_method\_info()}}
+{\footnotesize\ttfamily \label{class__file_8h_a1bdf5917540bbdab50ed3e3a3ec4515d} 
+\mbox{\hyperlink{structmethod__info__struct}{method\+\_\+info}} \texorpdfstring{$\ast$}{*} get\+\_\+method\+\_\+info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structclass__file}{Class\+File}} \texorpdfstring{$\ast$}{*}}]{class\+\_\+file}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{count}{, }\item[{\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{constant\+\_\+pool}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{Methodref\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Obtém as informações de um método específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{structclass__file}{class\+\_\+file}} & Ponteiro para a estrutura Class\+File. \\
+\hline
+{\em count} & Número de entradas no pool de constantes. \\
+\hline
+{\em constant\+\_\+pool} & Ponteiro para o pool de constantes. \\
+\hline
+{\em Methodref\+\_\+index} & Índice no pool de constantes que aponta para a referência do método. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para a estrutura method\+\_\+info contendo as informações do método. 
+\end{DoxyReturn}
+\Hypertarget{class__file_8h_aad276fa026f0537d2628a93dcb49f7a5}\index{class\_file.h@{class\_file.h}!get\_method\_name@{get\_method\_name}}
+\index{get\_method\_name@{get\_method\_name}!class\_file.h@{class\_file.h}}
+\doxysubsubsection{\texorpdfstring{get\_method\_name()}{get\_method\_name()}}
+{\footnotesize\ttfamily \label{class__file_8h_aad276fa026f0537d2628a93dcb49f7a5} 
+char \texorpdfstring{$\ast$}{*} get\+\_\+method\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{count}{, }\item[{\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{constant\+\_\+pool}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{Methodref\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Obtém o nome de um método a partir do pool de constantes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & Número de entradas no pool de constantes. \\
+\hline
+{\em constant\+\_\+pool} & Ponteiro para o pool de constantes. \\
+\hline
+{\em Methodref\+\_\+index} & Índice no pool de constantes que aponta para a referência do método. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para uma string contendo o nome do método. 
+\end{DoxyReturn}

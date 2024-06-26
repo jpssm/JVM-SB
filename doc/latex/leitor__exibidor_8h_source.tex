@@ -1,0 +1,27 @@
+\doxysection{leitor\+\_\+exibidor.\+h}
+\hypertarget{leitor__exibidor_8h_source}{}\label{leitor__exibidor_8h_source}\index{include/leitor\_exibidor/leitor\_exibidor.h@{include/leitor\_exibidor/leitor\_exibidor.h}}
+\mbox{\hyperlink{leitor__exibidor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ LEITOR\_EXIBIDOR\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ LEITOR\_EXIBIDOR\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class__file_8h}{class\_loader/class\_file.h}}>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \_WIN32\ }}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ CLEAR\ system("{}cls"{});}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ \_\_linux\_\_\ \ }}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ CLEAR\ system("{}clear"{});}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifdef\ \_\_APPLE\_\_\ \ }}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ CLEAR\ system("{}clear"{});}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leitor__exibidor_8h_a2e25a12ca169211e6d951dd9e0656d8b}{showClass}}(\mbox{\hyperlink{structclass__file}{ClassFile}}\ *cf);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -7,13 +7,6 @@
 #include <execution_engine/jvm.h>
 
 
-/**
- * Ponto de entrada do programa.
- *
- * @param argc Número de argumentos passados na linha de comando.
- * @param argv Argumentos passados na linha de comando - O nome do arquivo.
- * @return 0 em caso de sucesso, 1 em caso de erro.
- */
 int main(int argc, char const *argv[]) {
 
     // Verifica se o nome do arquivo foi passado na linha de comando.
@@ -67,7 +60,8 @@ int main(int argc, char const *argv[]) {
 
 sair:
     // Libera a memória alocada para o ClassFile.
-    free(cf);
+    
+    destroy_classfile(cf);
 
     // Fecha o arquivo binário.
     fclose(file);

@@ -1,0 +1,56 @@
+\doxysection{include/class\+\_\+loader/method.h File Reference}
+\hypertarget{method_8h}{}\label{method_8h}\index{include/class\_loader/method.h@{include/class\_loader/method.h}}
+
+
+Declarações de estruturas e funções para manipulação de métodos de classes Java.  
+
+
+{\ttfamily \#include $<$class\+\_\+loader/bytes.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/attribute.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/constant\+\_\+pool.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmethod__info__struct}{method\+\_\+info\+\_\+struct}}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar informações de métodos de uma classe Java. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{method_8h_a616e5ecdbbd9ded3c67f338f48ccd022}\label{method_8h_a616e5ecdbbd9ded3c67f338f48ccd022} 
+typedef struct \mbox{\hyperlink{structmethod__info__struct}{method\+\_\+info\+\_\+struct}} {\bfseries method\+\_\+info}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structmethod__info__struct}{method\+\_\+info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{method_8h_a6bb87088c872a6954fe9ea625181fbf3}{create\+\_\+methods}} (FILE \texorpdfstring{$\ast$}{*}file, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} count, \mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}constant\+\_\+pool)
+\begin{DoxyCompactList}\small\item\em Cria um array de estruturas method\+\_\+info a partir de um arquivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declarações de estruturas e funções para manipulação de métodos de classes Java. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{method_8h_a6bb87088c872a6954fe9ea625181fbf3}\index{method.h@{method.h}!create\_methods@{create\_methods}}
+\index{create\_methods@{create\_methods}!method.h@{method.h}}
+\doxysubsubsection{\texorpdfstring{create\_methods()}{create\_methods()}}
+{\footnotesize\ttfamily \label{method_8h_a6bb87088c872a6954fe9ea625181fbf3} 
+\mbox{\hyperlink{structmethod__info__struct}{method\+\_\+info}} \texorpdfstring{$\ast$}{*} create\+\_\+methods (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{count}{, }\item[{\mbox{\hyperlink{structcp__info__struct}{cp\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{constant\+\_\+pool}{}\end{DoxyParamCaption})}
+
+
+
+Cria um array de estruturas method\+\_\+info a partir de um arquivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Ponteiro para o arquivo que contém os dados dos métodos. \\
+\hline
+{\em count} & Número de métodos a serem lidos. \\
+\hline
+{\em constant\+\_\+pool} & Ponteiro para o pool de constantes da classe. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o array de estruturas method\+\_\+info criado. 
+\end{DoxyReturn}

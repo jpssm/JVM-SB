@@ -1,0 +1,27 @@
+\doxysection{method.\+h}
+\hypertarget{method_8h_source}{}\label{method_8h_source}\index{include/class\_loader/method.h@{include/class\_loader/method.h}}
+\mbox{\hyperlink{method_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ METHOD\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ METHOD\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bytes_8h}{class\_loader/bytes.h}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{attribute_8h}{class\_loader/attribute.h}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{constant__pool_8h}{class\_loader/constant\_pool.h}}>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmethod__info__struct}{method\_info\_struct}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structmethod__info__struct_a09d78f2123c685f69c46043d0d2da743}{access\_flags}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structmethod__info__struct_ad001944d263c760e6b4da54490b5dae4}{name\_index}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structmethod__info__struct_aad3cfb07229dba584c279ee9216decf6}{descriptor\_index}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ \mbox{\hyperlink{structmethod__info__struct_aef6416a6f61f4bc6523ed2147c44e5c4}{attributes\_count}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{structattribute__info}{attribute\_info}}\ *\mbox{\hyperlink{structmethod__info__struct_a430b00f8fd8673537e7c02a41c01e67c}{attributes}};\ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{structcode__attribute}{code\_attribute}}\ *\mbox{\hyperlink{structmethod__info__struct_a0e8caa24cba8b56d083996d5fd62108f}{code\_attribute}};\ }
+\DoxyCodeLine{00025\ \}\ \mbox{\hyperlink{structmethod__info__struct}{method\_info}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00035\ \mbox{\hyperlink{structmethod__info__struct}{method\_info}}\ *\mbox{\hyperlink{method_8h_a6bb87088c872a6954fe9ea625181fbf3}{create\_methods}}(FILE\ *file,\ \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}\ count,\ \mbox{\hyperlink{structcp__info__struct}{cp\_info}}\ *constant\_pool);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ METHOD\_H}}
+
+\end{DoxyCode}

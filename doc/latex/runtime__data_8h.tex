@@ -1,0 +1,117 @@
+\doxysection{include/runtime\+\_\+data/runtime\+\_\+data.h File Reference}
+\hypertarget{runtime__data_8h}{}\label{runtime__data_8h}\index{include/runtime\_data/runtime\_data.h@{include/runtime\_data/runtime\_data.h}}
+
+
+Define estruturas e funções para gerenciar os dados de execução de uma Máquina Virtual Java (JVM).  
+
+
+{\ttfamily \#include $<$class\+\_\+loader/class\+\_\+file.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/method.\+h$>$}\newline
+{\ttfamily \#include $<$class\+\_\+loader/bytes.\+h$>$}\newline
+{\ttfamily \#include $<$runtime\+\_\+data/object.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_method__area}{Method\+\_\+area}}
+\begin{DoxyCompactList}\small\item\em Representa a área de métodos da JVM. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_array__heap}{Array\+\_\+heap}}
+\begin{DoxyCompactList}\small\item\em Representa o heap de arrays da JVM. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_frame}{Frame}}
+\begin{DoxyCompactList}\small\item\em Representa um frame de pilha na JVM. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_frame__stack}{Frame\+\_\+stack}}
+\begin{DoxyCompactList}\small\item\em Representa a pilha de frames na JVM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{runtime__data_8h_a8bed1e36372ccc1470e37e91647cce20}\label{runtime__data_8h_a8bed1e36372ccc1470e37e91647cce20} 
+typedef struct Frame {\bfseries Frame}
+\begin{DoxyCompactList}\small\item\em Representa um frame de pilha na JVM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{runtime__data_8h_ab3d11b8f7b6f950110a4d2d7ba519ff9}{create\+\_\+frame}} (\mbox{\hyperlink{structmethod__info__struct}{method\+\_\+info}} \texorpdfstring{$\ast$}{*}method, \mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} method\+\_\+info\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Cria e inicializa um novo frame para um dado método. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{runtime__data_8h_a171ac7a2cf3f3513bef1885f3594a9fe}{store\+\_\+array}} (\mbox{\hyperlink{struct_array__heap}{Array\+\_\+heap}} \texorpdfstring{$\ast$}{*}array\+\_\+heap, \mbox{\hyperlink{struct_array}{Array}} \texorpdfstring{$\ast$}{*}array)
+\begin{DoxyCompactList}\small\item\em Armazena um novo array no heap de arrays e retorna seu identificador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{runtime__data_8h_ac5de663299299023250cd8b451e394ec}{print\+\_\+stack}} (\mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*}frame)
+\begin{DoxyCompactList}\small\item\em Imprime a pilha de operandos de um frame para fins de depuração. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{runtime__data_8h_ab26a58fdcfed22210c71bbfa331c1a4a}{print\+\_\+locals}} (\mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*}frame)
+\begin{DoxyCompactList}\small\item\em Imprime as variáveis locais de um frame para fins de depuração. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define estruturas e funções para gerenciar os dados de execução de uma Máquina Virtual Java (JVM). 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{runtime__data_8h_ab3d11b8f7b6f950110a4d2d7ba519ff9}\index{runtime\_data.h@{runtime\_data.h}!create\_frame@{create\_frame}}
+\index{create\_frame@{create\_frame}!runtime\_data.h@{runtime\_data.h}}
+\doxysubsubsection{\texorpdfstring{create\_frame()}{create\_frame()}}
+{\footnotesize\ttfamily \label{runtime__data_8h_ab3d11b8f7b6f950110a4d2d7ba519ff9} 
+\mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*} create\+\_\+frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmethod__info__struct}{method\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{method}{, }\item[{\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}}]{method\+\_\+info\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Cria e inicializa um novo frame para um dado método. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & Ponteiro para a informação do método. \\
+\hline
+{\em method\+\_\+info\+\_\+index} & Índice para a informação do método. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o frame criado. 
+\end{DoxyReturn}
+\Hypertarget{runtime__data_8h_ab26a58fdcfed22210c71bbfa331c1a4a}\index{runtime\_data.h@{runtime\_data.h}!print\_locals@{print\_locals}}
+\index{print\_locals@{print\_locals}!runtime\_data.h@{runtime\_data.h}}
+\doxysubsubsection{\texorpdfstring{print\_locals()}{print\_locals()}}
+{\footnotesize\ttfamily \label{runtime__data_8h_ab26a58fdcfed22210c71bbfa331c1a4a} 
+void print\+\_\+locals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*}}]{frame}{}\end{DoxyParamCaption})}
+
+
+
+Imprime as variáveis locais de um frame para fins de depuração. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & Ponteiro para o frame cujas variáveis locais serão impressas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{runtime__data_8h_ac5de663299299023250cd8b451e394ec}\index{runtime\_data.h@{runtime\_data.h}!print\_stack@{print\_stack}}
+\index{print\_stack@{print\_stack}!runtime\_data.h@{runtime\_data.h}}
+\doxysubsubsection{\texorpdfstring{print\_stack()}{print\_stack()}}
+{\footnotesize\ttfamily \label{runtime__data_8h_ac5de663299299023250cd8b451e394ec} 
+void print\+\_\+stack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_frame}{Frame}} \texorpdfstring{$\ast$}{*}}]{frame}{}\end{DoxyParamCaption})}
+
+
+
+Imprime a pilha de operandos de um frame para fins de depuração. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & Ponteiro para o frame cuja pilha de operandos será impressa. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{runtime__data_8h_a171ac7a2cf3f3513bef1885f3594a9fe}\index{runtime\_data.h@{runtime\_data.h}!store\_array@{store\_array}}
+\index{store\_array@{store\_array}!runtime\_data.h@{runtime\_data.h}}
+\doxysubsubsection{\texorpdfstring{store\_array()}{store\_array()}}
+{\footnotesize\ttfamily \label{runtime__data_8h_a171ac7a2cf3f3513bef1885f3594a9fe} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} store\+\_\+array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_array__heap}{Array\+\_\+heap}} \texorpdfstring{$\ast$}{*}}]{array\+\_\+heap}{, }\item[{\mbox{\hyperlink{struct_array}{Array}} \texorpdfstring{$\ast$}{*}}]{array}{}\end{DoxyParamCaption})}
+
+
+
+Armazena um novo array no heap de arrays e retorna seu identificador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+\_\+heap} & Ponteiro para o heap de arrays. \\
+\hline
+{\em array} & Ponteiro para o array a ser armazenado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Identificador do array armazenado. 
+\end{DoxyReturn}

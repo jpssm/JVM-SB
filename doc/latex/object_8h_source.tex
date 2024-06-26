@@ -1,0 +1,39 @@
+\doxysection{object.\+h}
+\hypertarget{object_8h_source}{}\label{object_8h_source}\index{include/runtime\_data/object.h@{include/runtime\_data/object.h}}
+\mbox{\hyperlink{object_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ OBJECT\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ OBJECT\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class__file_8h}{class\_loader/class\_file.h}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{method_8h}{class\_loader/method.h}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bytes_8h}{class\_loader/bytes.h}}>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ T\_BOOLEAN\ 4}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ T\_CHAR\ 5}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ T\_FLOAT\ 6}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ T\_DOUBLE\ 7}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ T\_BYTE\ 8}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ T\_SHORT\ 9}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ T\_INT\ 10}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ T\_LONG\ 11}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{struct_array_a27e2cf70f2377faac0aa8f759255e886}{content}};\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ \mbox{\hyperlink{struct_array_a67e25a39bb437d5809888d4662cf35da}{size}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}\ \mbox{\hyperlink{struct_array_a1d146546a2b9928e654c10f33a97c159}{atype}};\ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \}\ \mbox{\hyperlink{struct_array}{Array}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \mbox{\hyperlink{struct_array}{Array}}\ *\mbox{\hyperlink{object_8h_ae8a42e823dfcbde1ac1f8e1842e9e0da}{create\_array}}(\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}}\ size,\ \mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}\ type);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

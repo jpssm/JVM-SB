@@ -1,0 +1,105 @@
+\doxysection{code\+\_\+attribute Struct Reference}
+\hypertarget{structcode__attribute}{}\label{structcode__attribute}\index{code\_attribute@{code\_attribute}}
+
+
+Estrutura para armazenar informações de atributos de código.  
+
+
+
+
+{\ttfamily \#include $<$attribute.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcode__attribute_ac212be3282cfd1476952eb0fd9651094}{attribute\+\_\+name\+\_\+index}}
+\item 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{structcode__attribute_ab5c8b93df70a9181689cdfcea02c0052}{attribute\+\_\+length}}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcode__attribute_abd4d398c165a4e91f3ea559808931473}{max\+\_\+stack}}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcode__attribute_ab75487f3c1d38f9fb6ad5e71ab99dea2}{max\+\_\+locals}}
+\item 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} \mbox{\hyperlink{structcode__attribute_a8c2176f2e2a92747fd2920fde5992b43}{code\+\_\+length}}
+\item 
+\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcode__attribute_a72ecf2f84184325965481ecbc8d997cd}{code}}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcode__attribute_ab84a776a1bdeb79fde3b47279d8e12e4}{exception\+\_\+table\+\_\+length}}
+\item 
+\mbox{\hyperlink{structexception__table}{exception\+\_\+table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcode__attribute_acc292d2d3a97764b5fb284b8a07b002c}{exeption}}
+\item 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} \mbox{\hyperlink{structcode__attribute_a7c0a342c05fa196324b0806f6704916b}{attributes\+\_\+count}}
+\item 
+\mbox{\hyperlink{structattribute__info}{attribute\+\_\+info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcode__attribute_a9f45491da8c177e471b75c9539bb37b2}{attributes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estrutura para armazenar informações de atributos de código. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structcode__attribute_ab5c8b93df70a9181689cdfcea02c0052}\index{code\_attribute@{code\_attribute}!attribute\_length@{attribute\_length}}
+\index{attribute\_length@{attribute\_length}!code\_attribute@{code\_attribute}}
+\doxysubsubsection{\texorpdfstring{attribute\_length}{attribute\_length}}
+{\footnotesize\ttfamily \label{structcode__attribute_ab5c8b93df70a9181689cdfcea02c0052} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} code\+\_\+attribute\+::attribute\+\_\+length}
+
+Comprimento do atributo em bytes, excluindo este cabeçalho. \Hypertarget{structcode__attribute_ac212be3282cfd1476952eb0fd9651094}\index{code\_attribute@{code\_attribute}!attribute\_name\_index@{attribute\_name\_index}}
+\index{attribute\_name\_index@{attribute\_name\_index}!code\_attribute@{code\_attribute}}
+\doxysubsubsection{\texorpdfstring{attribute\_name\_index}{attribute\_name\_index}}
+{\footnotesize\ttfamily \label{structcode__attribute_ac212be3282cfd1476952eb0fd9651094} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} code\+\_\+attribute\+::attribute\+\_\+name\+\_\+index}
+
+Índice no pool de constantes que indica o nome do atributo. \Hypertarget{structcode__attribute_a9f45491da8c177e471b75c9539bb37b2}\index{code\_attribute@{code\_attribute}!attributes@{attributes}}
+\index{attributes@{attributes}!code\_attribute@{code\_attribute}}
+\doxysubsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \label{structcode__attribute_a9f45491da8c177e471b75c9539bb37b2} 
+\mbox{\hyperlink{structattribute__info}{attribute\+\_\+info}}\texorpdfstring{$\ast$}{*} code\+\_\+attribute\+::attributes}
+
+Ponteiro para os atributos adicionais. \Hypertarget{structcode__attribute_a7c0a342c05fa196324b0806f6704916b}\index{code\_attribute@{code\_attribute}!attributes\_count@{attributes\_count}}
+\index{attributes\_count@{attributes\_count}!code\_attribute@{code\_attribute}}
+\doxysubsubsection{\texorpdfstring{attributes\_count}{attributes\_count}}
+{\footnotesize\ttfamily \label{structcode__attribute_a7c0a342c05fa196324b0806f6704916b} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} code\+\_\+attribute\+::attributes\+\_\+count}
+
+Número de atributos adicionais. \Hypertarget{structcode__attribute_a72ecf2f84184325965481ecbc8d997cd}\index{code\_attribute@{code\_attribute}!code@{code}}
+\index{code@{code}!code\_attribute@{code\_attribute}}
+\doxysubsubsection{\texorpdfstring{code}{code}}
+{\footnotesize\ttfamily \label{structcode__attribute_a72ecf2f84184325965481ecbc8d997cd} 
+\mbox{\hyperlink{bytes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}}\texorpdfstring{$\ast$}{*} code\+\_\+attribute\+::code}
+
+Ponteiro para o array de código (bytecode). \Hypertarget{structcode__attribute_a8c2176f2e2a92747fd2920fde5992b43}\index{code\_attribute@{code\_attribute}!code\_length@{code\_length}}
+\index{code\_length@{code\_length}!code\_attribute@{code\_attribute}}
+\doxysubsubsection{\texorpdfstring{code\_length}{code\_length}}
+{\footnotesize\ttfamily \label{structcode__attribute_a8c2176f2e2a92747fd2920fde5992b43} 
+\mbox{\hyperlink{bytes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4}} code\+\_\+attribute\+::code\+\_\+length}
+
+Comprimento do array de código em bytes. \Hypertarget{structcode__attribute_ab84a776a1bdeb79fde3b47279d8e12e4}\index{code\_attribute@{code\_attribute}!exception\_table\_length@{exception\_table\_length}}
+\index{exception\_table\_length@{exception\_table\_length}!code\_attribute@{code\_attribute}}
+\doxysubsubsection{\texorpdfstring{exception\_table\_length}{exception\_table\_length}}
+{\footnotesize\ttfamily \label{structcode__attribute_ab84a776a1bdeb79fde3b47279d8e12e4} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} code\+\_\+attribute\+::exception\+\_\+table\+\_\+length}
+
+Número de entradas na tabela de exceções. \Hypertarget{structcode__attribute_acc292d2d3a97764b5fb284b8a07b002c}\index{code\_attribute@{code\_attribute}!exeption@{exeption}}
+\index{exeption@{exeption}!code\_attribute@{code\_attribute}}
+\doxysubsubsection{\texorpdfstring{exeption}{exeption}}
+{\footnotesize\ttfamily \label{structcode__attribute_acc292d2d3a97764b5fb284b8a07b002c} 
+\mbox{\hyperlink{structexception__table}{exception\+\_\+table}}\texorpdfstring{$\ast$}{*} code\+\_\+attribute\+::exeption}
+
+Ponteiro para a tabela de exceções. \Hypertarget{structcode__attribute_ab75487f3c1d38f9fb6ad5e71ab99dea2}\index{code\_attribute@{code\_attribute}!max\_locals@{max\_locals}}
+\index{max\_locals@{max\_locals}!code\_attribute@{code\_attribute}}
+\doxysubsubsection{\texorpdfstring{max\_locals}{max\_locals}}
+{\footnotesize\ttfamily \label{structcode__attribute_ab75487f3c1d38f9fb6ad5e71ab99dea2} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} code\+\_\+attribute\+::max\+\_\+locals}
+
+Número máximo de variáveis locais do método. \Hypertarget{structcode__attribute_abd4d398c165a4e91f3ea559808931473}\index{code\_attribute@{code\_attribute}!max\_stack@{max\_stack}}
+\index{max\_stack@{max\_stack}!code\_attribute@{code\_attribute}}
+\doxysubsubsection{\texorpdfstring{max\_stack}{max\_stack}}
+{\footnotesize\ttfamily \label{structcode__attribute_abd4d398c165a4e91f3ea559808931473} 
+\mbox{\hyperlink{bytes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}} code\+\_\+attribute\+::max\+\_\+stack}
+
+Tamanho máximo da pilha de operandos do método. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/class\+\_\+loader/\mbox{\hyperlink{attribute_8h}{attribute.\+h}}\end{DoxyCompactItemize}

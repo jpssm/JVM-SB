@@ -83,6 +83,17 @@ typedef struct cp_info_struct {
  */
 cp_info *create_constant_pool(FILE *file, u2 count);
 
+
+/**
+ * @brief Libera memória do Pool de constantes.
+ *
+ *
+ * @param cp Um ponteiro para estrutura Constant Pool.
+ * @param count O número de elementos na pool de constantes.
+ */
+void destroy_cp(cp_info* cp, u2 count);
+
+
 /**
  * @brief Imprime os itens da pool de constantes.
  *
