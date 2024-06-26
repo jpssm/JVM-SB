@@ -32,4 +32,9 @@ typedef struct class_file
 
 ClassFile *create_classfile(FILE *file);
 
+char *get_method_name(u2 count, cp_info *constant_pool, u2 Methodref_index);
+char *get_method_descriptor(u2 count, cp_info *constant_pool, u2 Methodref_index);
+
+method_info *get_method_info(ClassFile *class_file, u2 count, cp_info *constant_pool, u2 Methodref_index);
+
 #endif // !1

@@ -65,3 +65,33 @@ ClassFile *create_classfile(FILE *file)
     
     return cf;
 }
+
+char *get_method_name(u2 count, cp_info *constant_pool, u2 Methodref_index){
+    cp_info *cp_method, *cp_utf8, *cp_name_and_type;
+    cp_method = get_from_cp(constant_pool, count, Methodref_index);
+    cp_name_and_type = get_from_cp(constant_pool, count, cp_method->info.Methodref.name_and_type_index);
+    cp_utf8 = get_from_cp(constant_pool, count, cp_name_and_type->info.NameAndType.name_index);
+    return cp_utf8->info.Utf8.bytes;
+}
+
+char *get_method_descriptor(u2 count, cp_info *constant_pool, u2 Methodref_index){
+    cp_info *cp_method, *cp_utf8, *cp_name_and_type;
+    cp_method = get_from_cp(constant_pool, count, Methodref_index);
+    cp_name_and_type = get_from_cp(constant_pool, count, cp_method->info.Methodref.name_and_type_index);
+    cp_utf8 = get_from_cp(constant_pool, count, cp_name_and_type->info.NameAndType.descriptor_index);
+    return cp_utf8->info.Utf8.bytes;
+}
+
+method_info *get_method_info(ClassFile *class_file, u2 count, cp_info *constant_pool, u2 Methodref_index){
+    cp_info *cp_method = get_from_cp(constant_pool, count, Methodref_index);
+    cp_info *cp_name_and_type = cp_name_and_type = get_from_cp(constant_pool, count, cp_method->info.Methodref.name_and_type_index);
+    u2 name_index =  cp_name_and_type->info.NameAndType.name_index;
+    u2 descritor_index = cp_name_and_type->info.NameAndType.descriptor_index;
+    for (int i = 0; i < class_file->methods_count; i++){
+
+        if(class_file->methods[i].name_index == name_index && class_file->methods[i].descriptor_index == descritor_index){
+            return (&class_file->methods[i]);
+        }
+    }
+    return NULL;
+};

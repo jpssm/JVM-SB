@@ -4,7 +4,41 @@
 #include <class_loader/bytes.h>
 #include <runtime_data/runtime_data.h>
 
+enum retrunType{I_RETURN, L_RETURN, F_RETURN, D_RETURN, A_RETURN, RETURN_};
+
+typedef struct {
+    u4 i;
+    float f;
+}Value_32;
+
+typedef struct {
+    u8 l;
+    double d;
+}Value_64;
+
+typedef struct{
+    char was_a_call : 1;
+    char was_a_return : 1;
+    int method_info_index;
+    char return_type;
+} Control_flags;
+
+
+
 void jvm(ClassFile * class);
+
+void push(n);
+
+void push_u8(Frame *frame, u8 n);
+
+u4 pop_stack();
+
+u8 pop_stack_u8();
+
+void pass_parameters(Frame *caller_frame, Frame *called_frame);
+
+extern void (*interpreter[256]) (u1*);
+extern char *intructions[256];
 
 //Instruction                  Hex  Operand Type
 void nop             (u1* operands); // 0x00    None
@@ -212,8 +246,6 @@ void jsr_w           (u1* operands);// 0xc9    Int (branch offset)
 void breakpoint      (u1* operands);// 0xca    None (reserved for debuggers)
 void impdep1         (u1* operands);// 0xfe    None (reserved for implementation-dependent operations)
 void impdep2         (u1* operands);// 0xff    None (reserved for implementation-dependent operations)
-
-
 
 #endif
 
